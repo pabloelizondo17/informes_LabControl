@@ -1,0 +1,61 @@
+Resultados de la identificacion FOPDT
+Laboratorio de Control Automatico
+
+_______________________________________________
+Modelo escalon:
+
+>> modeloEscalon = identificar_FOPDT_TCLab("escalon_Q1_50_20260812_092634.mat")
+
+Modelo FOPDT identificado
+Archivo: escalon_Q1_50_20260812_092634.mat
+K     = 0.937801 degC/%
+tau   = 189.293 s
+theta = 21.001 s
+RMSE  = 0.4632 degC
+R^2   = 0.99868
+Ajuste = 96.36 %
+
+
+modeloEscalon = 
+
+  struct with fields:
+
+             Archivo: "escalon_Q1_50_20260812_092634.mat"
+              Modelo: "FOPDT"
+                   G: [1×1 tf]
+          Parametros: [1×3 table]
+    CondicionInicial: [1×3 table]
+            Metricas: [1×5 table]
+               Datos: [1861×5 table]
+       Configuracion: [1×1 struct]
+       
+       
+       
+       
+_______________________________________________
+Modelo multinivel:
+
+>> modeloMultinivel = identificar_FOPDT_TCLab("multinivel_Q1_20260812_102725.mat")
+
+Modelo FOPDT identificado
+Archivo: multinivel_Q1_20260812_102725.mat
+K     = 0.980642 degC/%
+tau   = 208.731 s
+theta = 13.000 s
+RMSE  = 0.7022 degC
+R^2   = 0.99743
+Ajuste = 94.93 %
+
+
+modeloMultinivel = 
+
+  struct with fields:
+
+             Archivo: "multinivel_Q1_20260812_102725.mat"
+              Modelo: "FOPDT"
+                   G: [1×1 tf]
+          Parametros: [1×3 table]
+    CondicionInicial: [1×3 table]
+            Metricas: [1×5 table]
+               Datos: [3521×5 table]
+       Configuracion: [1×1 struct]
