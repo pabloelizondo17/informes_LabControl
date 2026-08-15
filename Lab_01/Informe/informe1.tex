@@ -1,0 +1,176 @@
+% bare_jrnl.tex
+% V1.4b
+% 2015/08/26
+% by Michael Shell
+% see http://www.michaelshell.org/
+% for current contact information.                                                                 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+
+\documentclass[journal]{IEEEtran}
+
+\usepackage{circuitikz}          % antes de babel
+\usepackage{tikz}
+\usepackage[spanish, es-noshorthands]{babel}
+\usepackage{float}
+\usepackage{instructivo}
+\graphicspath{{./}{./fig/}}
+\usepackage[natbib=true,style=trad-unsrt,backend=biber]{biblatex}
+\addbibresource{literatura.bib}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage{amsmath}
+\usetikzlibrary{shapes, arrows.meta, positioning, calc}
+ 
+% --- Estilos ---
+\tikzset{
+  block/.style={
+    draw, rectangle,
+    minimum width=3.2cm, minimum height=1.2cm,
+    align=center, font=\small
+  },
+  line/.style={draw, -{Latex[length=2.5mm, width=2mm]}},
+  siglabel/.style={font=\footnotesize, text=blue!65!black},
+  blklabel/.style={font=\footnotesize, right=0.15cm, text=black}
+}
+
+\begin{document}
+\setlength{\parindent}{4.2mm}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Planta térmica TCLab}
+
+
+\author{Matías~A.~Camacho,~\IEEEmembership{Estudiante,~TEC}
+        y~Juan~P.~Elizondo,~\IEEEmembership{Estudiante,~TEC}
+}
+
+
+% The paper headers
+\markboth{Laboratorio de control automático, IIS2026}%
+{Laboratorio de control automático}
+
+
+% make the title area
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introducción}
+
+\IEEEPARstart{E}{n}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resultados}
+\begin{table}[H]
+    \centering
+    \caption{Validación cruzada del modelo FOPDT, modelo escalón frente a datos multinivel}
+    \label{tab:validacion_fopdt}
+    \begin{tabular}{lc}
+        \hline
+        \textbf{Parámetro} & \textbf{Valor} \\
+        \hline
+        $K$ & $0.937801~^\circ\mathrm{C}/\%$ \\
+        $\tau$ & $189.293~\mathrm{s}$ \\
+        $\theta$ & $21.001~\mathrm{s}$ \\
+        RMSE & $1.2273~^\circ\mathrm{C}$ \\
+        $R^2$ & $0.99175$ \\
+        Ajuste & $90.92\%$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Validación cruzada del modelo FOPDT, modelo multinivel frente a datos escalón}
+    \label{tab:validacion_fopdt}
+    \begin{tabular}{lc}
+        \hline
+        \textbf{Parámetro} & \textbf{Valor} \\
+        \hline
+        $K$ & $0.980642~^\circ\mathrm{C}/\%$ \\
+        $\tau$ & $208.731~\mathrm{s}$ \\
+        $\theta$ & $13.000~\mathrm{s}$ \\
+        RMSE & $1.7692~^\circ\mathrm{C}$ \\
+        $R^2$ & $0.97211$ \\
+        Ajuste & $83.30\%$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.4\textwidth, page=1]{G1A2.pdf}
+%     \caption{Temperatura experimental y temperatura predicha por el modelo FOPDT}
+%     \label{fig:pdf_1}
+% \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Análisis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Diagrama funcional de bloques}
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Análisis y Validación}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusiones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\printbibliography
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Biografías de los autores}
+
+ 
+\begin{IEEEbiographynophoto}{Matías A. Camacho}
+        Estudiante del Instituto Tecnológico de Costa Rica (TEC) en la carrera de ingeniería electrónica.
+        
+        Correo: jeacamacho@estudiantec.cr
+\end{IEEEbiographynophoto}
+
+\begin{IEEEbiographynophoto}{Juan P. Elizondo}
+        Estudiante de Ingeniería Electrónica en el Tecnológico de Costa Rica (TEC).
+        Cuenta con preparación y/o experiencia en áreas como:
+        \begin{itemize}
+            \item Arquitectura básica de redes, CISCO CCNA V7 (ITN), (2021).
+            \item Fundamentos de ciberseguridad, CISCO Systems, (2022).
+            \item Programa de tutorías estudiantiles, Tecnológico de Costa Rica, (2024).
+            \item Diseño de circuitos digitales, TEC (2025).
+        \end{itemize}
+        
+        Correo: juelizondo@estudiantec.cr
+\end{IEEEbiographynophoto}
+
+
+\vfill
+
+\end{document}
