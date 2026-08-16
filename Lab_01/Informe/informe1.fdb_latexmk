@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber informe1"] 0 "informe1.bcf" "informe1.bbl" "informe1" 1786819187.75629 -1
-  "informe1.bcf" 1786819187 106909 00a202e4accf4e974b238942a4752a3a "pdflatex"
+["biber informe1"] 0 "informe1.bcf" "informe1.bbl" "informe1" 1786840468.6404 -1
+  "informe1.bcf" 1786840468 106909 00a202e4accf4e974b238942a4752a3a "pdflatex"
   "literatura.bib" 1786814669 2063 4a7cb7d515fde43db323ce00fb277417 ""
   (generated)
   "informe1.bbl"
   "informe1.blg"
   (rewritten before read)
-["pdflatex"] 1786819185.39541 "c:/Users/matia/Downloads/LabCaut/informes_LabControl/Lab_01/Informe/informe1.tex" "informe1.pdf" "informe1" 1786819187.7577 0
+["pdflatex"] 1786840466.02345 "c:/Users/matia/Downloads/LabCaut/informes_LabControl/Lab_01/Informe/informe1.tex" "informe1.pdf" "informe1" 1786840468.64127 0
   "C:/Users/matia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1781384296 124346 55158e4ffab625ef9c37e66c4ee22ffe ""
   "C:/Users/matia/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1741727281 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/matia/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1741727284 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -256,13 +256,18 @@
   "C:/Users/matia/AppData/Local/Programs/MiKTeX/tex/latex/vmargin/vmargin.sty" 1090548324 7055 5eae49c3f07fead60d92def0a4f5c30f ""
   "C:/Users/matia/AppData/Local/Programs/MiKTeX/tex/latex/was/icomma.sty" 1665850770 1018 df058db1896806f044e2233bb506d425 ""
   "C:/Users/matia/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "c:/Users/matia/Downloads/LabCaut/informes_LabControl/Lab_01/Informe/informe1.tex" 1786819184 6107 8e456eeb126e3bec2d0dc89a07392470 ""
-  "fig/G1A2.pdf" 1786818896 54492 27c214543003c3b25957307315acb112 ""
-  "informe1.aux" 1786819187 2785 3a4d11070c1200ff9e61579b48200c60 "pdflatex"
+  "c:/Users/matia/Downloads/LabCaut/informes_LabControl/Lab_01/Informe/informe1.tex" 1786840453 7413 536fe583684d8f17618f4b9df67ac3d0 ""
+  "fig/Escalon.png" 1786840062 42397 e74058596f4ac91566da1156941ce383 ""
+  "fig/Escalones.png" 1786840032 53730 bba3f89e9c97baaa5d49875fa670f5bc ""
+  "fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png" 1786840081 77203 b49d601818dc51ab756341854425c78a ""
+  "fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png" 1786840018 62869 3cbc4ed8518b2c720a3e3410d170fed4 ""
+  "fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png" 1786840051 61296 5c2cc84c2152a58dd6820bd3a8dbbe2c ""
+  "fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png" 1786839986 66112 eb4c3e0f78a318d2b2931f794a27798d ""
+  "informe1.aux" 1786840468 4794 579d92555e88892d4ba0d04953dbadcd "pdflatex"
   "informe1.bbl" 1786814778 486 ee04f40f768daeed26442158e95aba61 "biber informe1"
-  "informe1.out" 1786819187 1338 969c0b05b0d9d4d05be2cdb37cc9009c "pdflatex"
-  "informe1.run.xml" 1786819187 2441 c8b40abd1423029856b6fc089856dced "pdflatex"
-  "informe1.tex" 1786819184 6107 8e456eeb126e3bec2d0dc89a07392470 ""
+  "informe1.out" 1786840468 1338 969c0b05b0d9d4d05be2cdb37cc9009c "pdflatex"
+  "informe1.run.xml" 1786840468 2441 c8b40abd1423029856b6fc089856dced "pdflatex"
+  "informe1.tex" 1786840453 7413 536fe583684d8f17618f4b9df67ac3d0 ""
   "instructivo.sty" 1786814669 9943 70b3f92c58cb68227f7c1e4e4c4168c2 ""
   (generated)
   "informe1.aux"

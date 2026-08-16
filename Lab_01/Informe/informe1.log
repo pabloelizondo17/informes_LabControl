@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.11)  15 AUG 2026 12:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.11)  15 AUG 2026 18:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1167,10 +1167,6 @@ File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 ) (informe1.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
-
-
-LaTeX Warning: Label `tab:validacion_fopdt' multiply defined.
-
 )
 \openout1 = `informe1.aux'.
 
@@ -1338,22 +1334,52 @@ LaTeX Font Info:    Trying to load font information for U+trsy on input line 87.
  (C:\Users\matia\AppData\Local\Programs\MiKTeX\tex/latex/trsym\utrsy.fd
 File: utrsy.fd 2000/06/25v1.0transformation symbol font definitions
 )
-<./fig/G1A2.pdf, id=46, page=1, 975.645pt x 143.53625pt>
-File: ./fig/G1A2.pdf Graphic file (type pdf)
-<use ./fig/G1A2.pdf, page 1>
-Package pdftex.def Info: ./fig/G1A2.pdf , page1 used on input line 121.
-(pdftex.def)             Requested size: 200.19054pt x 29.4514pt.
+<./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png, id=46, 361.35pt x 216.81pt>
+File: ./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png Graphic file (type png)
+<use ./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png>
+Package pdftex.def Info: ./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png  used on input line 103.
+(pdftex.def)             Requested size: 195.39433pt x 117.23775pt.
+<./fig/Escalones.png, id=48, 361.35pt x 216.81pt>
+File: ./fig/Escalones.png Graphic file (type png)
+<use ./fig/Escalones.png>
+Package pdftex.def Info: ./fig/Escalones.png  used on input line 110.
+(pdftex.def)             Requested size: 195.39433pt x 117.23775pt.
+<./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png, id=49, 361.35pt x 216.81pt>
+File: ./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png Graphic file (type png)
+<use ./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png>
+Package pdftex.def Info: ./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png  used on input line 117.
+(pdftex.def)             Requested size: 195.39433pt x 117.23775pt.
+
+Underfull \vbox (badness 2343) has occurred while \output is active []
+
+<./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png, id=50, 361.131pt x 219.876pt>
+File: ./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png Graphic file (type png)
+<use ./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png>
+Package pdftex.def Info: ./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png  used on input line 141.
+(pdftex.def)             Requested size: 195.39433pt x 118.96611pt.
+<./fig/Escalon.png, id=51, 361.35pt x 219.438pt>
+File: ./fig/Escalon.png Graphic file (type png)
+<use ./fig/Escalon.png>
+Package pdftex.def Info: ./fig/Escalon.png  used on input line 148.
+(pdftex.def)             Requested size: 195.39433pt x 118.65881pt.
+<./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png, id=52, 361.131pt x 216.591pt>
+File: ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png Graphic file (type png)
+<use ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png>
+Package pdftex.def Info: ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png  used on input line 155.
+(pdftex.def)             Requested size: 195.39433pt x 117.18874pt.
+ [1{C:/Users/matia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
-LaTeX Warning: Empty bibliography on input line 147.
+ <./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png> <./fig/Escalones.png> <./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png> <./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png> <./fig/Escalon.png>]
+
+LaTeX Warning: Empty bibliography on input line 181.
 
 \tf@thm=\write6
 \openout6 = `informe1.thm'.
 
-[1{C:/Users/matia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+[2
 
-
- <./fig/G1A2.pdf>] (informe1.aux
+ <./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png>] (informe1.aux
 LaTeX Info: Redefining \sptext on input line 8.
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
@@ -1362,10 +1388,6 @@ LaTeX Info: Redefining \% on input line 8.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `informe1.out' has not changed.
 (rerunfilecheck)             Checksum: 969C0B05B0D9D4D05BE2CDB37CC9009C;1338.
 Package logreq Info: Writing requests to 'informe1.run.xml'.
@@ -1373,17 +1395,17 @@ Package logreq Info: Writing requests to 'informe1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56838 strings out of 474486
- 1345030 string characters out of 5743755
- 2368876 words of memory out of 5000000
- 78458 multiletter control sequences out of 15000+600000
+ 56896 strings out of 474486
+ 1347481 string characters out of 5743755
+ 2369560 words of memory out of 5000000
+ 78510 multiletter control sequences out of 15000+600000
  687027 words of font info for 159 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 117i,11n,121p,1221b,1805s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,11n,121p,1221b,1803s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on informe1.pdf (1 page, 132392 bytes).
+Output written on informe1.pdf (2 pages, 382463 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 120 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
