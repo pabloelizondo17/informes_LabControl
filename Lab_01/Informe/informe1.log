@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.11)  15 AUG 2026 18:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.11)  16 AUG 2026 19:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1371,15 +1371,32 @@ Package pdftex.def Info: ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.pn
 
 
  <./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png> <./fig/Escalones.png> <./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png> <./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png> <./fig/Escalon.png>]
+Overfull \hbox (6.28033pt too wide) in paragraph at lines 228--228
+ []|\T1/phv/b/n/10 Parámetro 
+ []
 
-LaTeX Warning: Empty bibliography on input line 181.
+
+Overfull \hbox (23.58485pt too wide) in paragraph at lines 228--228
+ []|$\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 937801 []C\OML/cmm/m/it/10 = \OT1/cmr/m/n/10 %[]$| 
+ []
+
+
+Overfull \hbox (3.66801pt too wide) in paragraph at lines 228--228
+ []|$\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 203932 []C\OML/cmm/m/it/10 = \OT1/cmr/m/n/10 %[]$| 
+ []
+
+
+Overfull \hbox (15.39026pt too wide) in paragraph at lines 228--228
+ []|$\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 016926 []C\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 ( %[]s)$| 
+ []
+
+
+LaTeX Warning: Empty bibliography on input line 245.
 
 \tf@thm=\write6
 \openout6 = `informe1.thm'.
 
-[2
-
- <./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png>] (informe1.aux
+[2 <./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png>] (informe1.aux
 LaTeX Info: Redefining \sptext on input line 8.
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
@@ -1389,23 +1406,23 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `informe1.out' has not changed.
-(rerunfilecheck)             Checksum: 969C0B05B0D9D4D05BE2CDB37CC9009C;1338.
+(rerunfilecheck)             Checksum: 37498F4F1831CE52CAFC62B1E0725596;1518.
 Package logreq Info: Writing requests to 'informe1.run.xml'.
 \openout1 = `informe1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56896 strings out of 474486
- 1347481 string characters out of 5743755
- 2369560 words of memory out of 5000000
- 78510 multiletter control sequences out of 15000+600000
- 687027 words of font info for 159 fonts, out of 8000000 for 9000
+ 56908 strings out of 474486
+ 1347685 string characters out of 5743755
+ 2373662 words of memory out of 5000000
+ 78513 multiletter control sequences out of 15000+600000
+ 688244 words of font info for 160 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 117i,11n,121p,1221b,1803s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on informe1.pdf (2 pages, 382463 bytes).
+ 117i,14n,121p,1221b,1803s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/matia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on informe1.pdf (2 pages, 421823 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
+ 148 PDF objects out of 1000 (max. 8388607)
+ 29 named destinations out of 1000 (max. 500000)
  123 words of extra memory for PDF output out of 10000 (max. 10000000)
 

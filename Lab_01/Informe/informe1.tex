@@ -157,17 +157,81 @@
         \label{fig:kkk}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Análisis}
+\subsection{Selección del modelo nominal de la planta}
+Basándose en los resultados obtenidos de la validación cruzada, se escoje el modelo FOPDT basado en los datos experimentales 
+de la prueba con un escalón. Esto debido al alto porcentaje de ajuste y valor de $R^2$ muy cercano a 1. Además, el modelo fue capaz de predecir muy bien el comportamiento del sistema 
+ante varios tipos de entradas. El mmodelo FOPDT basado en los datos del experimento multinivel presentó un ajuste más alejado al 100\% y con un valor de $R^2$ más lejano a 1.
+
+Analizando las gráficas de residuos \ref{fig:jjj} y \ref{fig:kkk}, ambos modelos muestran picos alredor de $\pm1^\circ\text{C}$ y $\pm3^\circ\text{C}$.
+
+Sin embargo, es importante mencionar que la validación cruzada con datos multinivel utilizando el modelo FOPDT de una entrada escalón no tuvo la misma capacidad predictiva para todas las entradas multiescalón. Como se puede ver en la gráfica \ref{fig:j}, el modelo no predijo con tanta exactitud luego de la entrada de 50\%. Aun así, ambos modelos tienen buenas capacidades para predecir el comportamiento del sistema, por lo que la elección del FOPDT basado en los datos 
+del experimento con escalón da seguridad de que el modelo es capaz de predecir distintas entradas con bastante exactitud. 
+
+Por consiguiente, el modelo escogido es el siguiente (véase unidades en la tabla \ref{tab:validacion_fopdt}).
+
+\begin{equation}
+        G_{p,nom}(s)=\frac{K_{nom}e^{-\theta s}}{\tau s + 1}=\frac{0.937801e^{-21s}}{189.293s+1}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Diagrama funcional de bloques}
+\section{Diseño del controlador PI}
+Para diseñar el controlador PI, se utilizó como referencia la siguiente ecuación
+\begin{equation}
+        G_{c}(s)=K_p+\frac{K_i}{s}=K_p\left(1+\frac{1}{T_i s}\right)
+\end{equation}
 
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+donde
+\begin{equation}
+        K_i=\frac{K_p}{T_i}
+\end{equation}
+
+Además, siguiendo reglas SIMC, se tiene que
+\begin{equation}
+        K_p=\frac{1}{K}\frac{\tau}{\tau_c+\theta}
+\end{equation}
+
+\begin{equation}
+        T_i=\min\{\tau,4(\tau_c+\theta)\}
+\end{equation}
+
+\begin{equation}
+        K_i=\frac{K_p}{T_i}
+\end{equation}
+
+Por ende, el parámetro $\tau_c$ es el único que se decide para la sintonización. Se utilizará como primera configuración $\tau_c=2\theta$
+
+Se obtienen los siguientes resultados.
+
+\begin{table}[H]
+    \centering
+    \caption{Modelo nominal y parámetros del controlador PI-SIMC}
+    \label{tab:parametros_controlador}
+    
+    \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{
+        >{\centering\arraybackslash}p{1.5cm}
+        >{\centering\arraybackslash}p{1.5cm}
+        >{\centering\arraybackslash}p{2cm}
+        >{\centering\arraybackslash}p{2.2cm}
+    }
+        \hline
+        \textbf{Parámetro de la planta} & \textbf{Valor} &
+        \textbf{Parámetro del controlador} & \textbf{Valor} \\
+        \hline
+        $K$&$0.937801\,^\circ\mathrm{C}/\%$&$\tau_c$ &$42\,\mathrm{s}$ \\
+        $\tau$&$189.293\,\mathrm{s}$   & $K_p$ & $3.203932\,^\circ\mathrm{C}/\%$ \\
+        $\theta$ &$21\,\mathrm{s}$  & $T_i$ & $84.004\,\mathrm{s}$ \\
+        & & $K_i$ & $0.016926\,^\circ\mathrm{C}/(\% \mathrm{s})$ \\
+        \hline
+    \end{tabular}%
+    }
+\end{table}
+
+\begin{equation}
+        G_{c}(s)=3.20\left(1+\frac{1}{84.004 s}\right)
+\end{equation}
+
 \section{Análisis y Validación}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
