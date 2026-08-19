@@ -1,22 +1,3 @@
-% bare_jrnl.tex
-% V1.4b
-% 2015/08/26
-% by Michael Shell
-% see http://www.michaelshell.org/
-% for current contact information.                                                                 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
-%% journal paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/pkg/ieeetran
-%% and
-%% http://www.ieee.org/
-
-
 \documentclass[journal]{IEEEtran}
 
 \usepackage{circuitikz}          % antes de babel
@@ -47,20 +28,11 @@
 
 \begin{document}
 \setlength{\parindent}{4.2mm}
-%
-% paper title
-% Titles are generally capitalized except for words such as a, an, and, as,
-% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
-% not capitalized unless they are the first or last word of the title.
-% Linebreaks \\ can be used within to get better formatting as desired.
-% Do not put math or special symbols in the title.
 \title{Planta térmica TCLab}
-
 
 \author{Matías~A.~Camacho,~\IEEEmembership{Estudiante,~TEC}
         y~Juan~P.~Elizondo,~\IEEEmembership{Estudiante,~TEC}
 }
-
 
 % The paper headers
 \markboth{Laboratorio de control automático, IIS2026}%
@@ -71,14 +43,66 @@
 \maketitle
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introducción}
 
-\IEEEPARstart{E}{n}
+\IEEEPARstart{E}{l} desarrollo de sistemas de control modernos para aplicaciones industriales y electrónicas 
+requiere metodologías que garanticen la precisión, seguridad y robustez del diseño antes de su despliegue 
+físico. En este contexto, el Diseño Basado en Modelos (\textit{Model-Based Design}) ofrece un marco estructurado 
+que utiliza modelos matemáticos ejecutables para representar tanto la planta física como los algoritmos de 
+control. Dentro de este ciclo de desarrollo, la prueba \textit{Model-in-the-Loop} (MIL) constituye la primera etapa de 
+verificación funcional, permitiendo simular y analizar el comportamiento del lazo cerrado en un entorno 
+puramente virtual.
+
+En esta práctica de laboratorio se aborda la caracterización, identificación y control de temperatura de la planta 
+física \textit{Temperature Control Lab} (TCLab). La dinámica térmica del sistema se analiza inicialmente a partir de primeros 
+principios mediante un balance de energía no lineal que contempla pérdidas por convección y radiación. Dado que las 
+técnicas de control lineal convencionales se basan en representaciones en el dominio de Laplace, el modelo no lineal 
+se aproxima mediante linealización analítica e identificación experimental.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Descripción de la planta}
+En la guía de laboratorio proporcionada \cite{guia_tclab_2026}, se desarrolló el modelo físico de la planta a partir de principios termodinámicos, 
+con los cuales resultó un modelo no lineal que posteriormente se linealizó al rededor de $Q = 50\%$.
+Tras el proceso de linealización, se logra llegar a la siguiente función de transferencia, correspondiente a la planta de
+análisis:
+
+\begin{equation}
+        \begin{aligned}
+                G(s) &= \frac{K}{\tau s + 1} \\
+                \tau &= -\frac{1}{\gamma} \\
+                K    &= \frac{1}{\gamma} \\
+        \end{aligned}
+\end{equation}
+
+La planta utilizada en este laboratorio cuenta con dos calentadores resistivos ($Q_1$ y $Q_2$), así como dos sensores
+de temperatura ($T_1$ y $T_2$) según se muestra en la Figura \ref{fig:planta}. De las partes anteriores, se utilizan 
+únicamente el primer calentador, así como la temperatura medida por $T_1$.
+
+De esta forma, al energizar $Q_1$, una parte de la energía eléctrica se convierte en calor, llegando a elevar la
+temperatura del conjunto calentador-sensor.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\linewidth]{TCLab.jpg}
+        \caption{Planta TCLab}
+        \label{fig:planta}
+\end{figure}
+
+Durante el proceso de identificación de modelos \textit{First-Order Plus Dead Time} (FOPDT), con el fin de representar la dinámica térmica dominante de 
+la TCLab, se utiliza un modelo de primer orden y con tiempo muerto, para la función de transferencia de la
+planta, tal como se muestra en la ecuación \ref{eq:G_fopdt}.
+
+\begin{equation}
+        \begin{aligned}
+                G_p{(s)} &= \frac{K }{\tau s + 1} \cdot e^{-\theta s} \\
+        \end{aligned}
+\label{eq:G_fopdt}
+\end{equation}
+
+
+
 \section{Resultados}
 \begin{table}[H]
     \centering
