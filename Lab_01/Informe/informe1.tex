@@ -1,10 +1,13 @@
 \documentclass[journal]{IEEEtran}
 
-\usepackage{circuitikz}          % antes de babel
+\usepackage{circuitikz}   
 \usepackage{tikz}
 \usepackage[spanish, es-noshorthands]{babel}
 \usepackage{float}
 \usepackage{instructivo}
+\usepackage{tabularx}
+\usepackage{array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \graphicspath{{./}{./fig/}}
 \usepackage[natbib=true,style=trad-unsrt,backend=biber]{biblatex}
 \addbibresource{literatura.bib}
@@ -101,7 +104,63 @@ planta, tal como se muestra en la ecuación \ref{eq:G_fopdt}.
 \label{eq:G_fopdt}
 \end{equation}
 
+\begin{table}[H]
+  \centering
+  \caption{Registro inicial de la planta y el entorno}
+  \label{tab:registro_planta}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\columnwidth}{@{}lX@{}}
+    \toprule
+    \textbf{Dato} & \textbf{Valor registrado} \\
+    \midrule
+    Código de la TCLab           & -- \\
+    Fecha y hora                 & 12/08/2026 - 7:40~a.m. \\
+    Integrantes                  & Matías~A.~Camacho~y~Juan~P.~Elizondo\\
+    Puerto de comunicación       & /dev/ttyS0 (Linux) \\
+    Temperatura ambiente inicial & $24.51~^\circ\mathrm{C}$ \\
+    Observaciones del montaje    & N/A \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
 
+\section{Verificación previa de la planta}
+En esta sección se verifica el correcto funcionamiento de la planta, así como de las 
+distintas conexiones necesarias para el correcto desarrollo del laboratorio.
+Tal como lo indica la guía de laboratorio \cite{guia_tclab_2026}, se resumen los aspectos
+verificados en la Tabla~\ref{tab:verificacion_planta}.
+
+\begin{table}[H]
+  \centering
+  \caption{Resultados de la verificación previa}
+  \label{tab:verificacion_planta}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\columnwidth}{@{}Ycc@{}}
+    \toprule
+    \textbf{Verificación} & \textbf{Satisfactoria} & \textbf{No satisfactoria} \\
+    \midrule
+    Conexión con la TCLab        & x &   \\
+    Respuesta del LED            & x &   \\
+    Lectura de $T_1$             & x &   \\
+    Lectura de $T_2$             & x &   \\
+    Respuesta térmica ante $Q_1$ & x &   \\
+    $Q_1 = 0~\%$ al finalizar    &   & x \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+De los aspectos evaluados, el único que no resultó como se esperaba fue
+el porcentaje de $Q_1$ al finalizar la prueba, el cual no se encontraba en $0~\%$.
+Sin embargo, esto no afecta el desarrollo del laboratorio, y responde únicamente a la ventana
+de tiempo de simulación.
+
+En cuanto a la respuesta de los sensores de temperatura, el valor inicial para $T_1$ fue de $24.68~^\circ\mathrm{C}$, el de 
+$T_2$ fue de $24.34~^\circ\mathrm{C}$ y por lo tanto el $\Delta T$ inicial fue de $0.34~^\circ\mathrm{C}$, lo cual es
+bastante aceptable dado su valor. 
+
+Adicionalmente, es necesario entender que una respuesta adecuada del LED solo verifica la conexión
+exitosa del TCLab con el computador, pero no garantiza que la planta esté funcionando correctamente, ya que
+para esto es necesario evaluar el comportamiento de los elementos que componen la planta, así como su respuesta
+en conjunto.
 
 \section{Resultados}
 \begin{table}[H]
