@@ -206,6 +206,57 @@ que el porcentaje de potencia aplicada se ve incrementado; además, se observa u
 al inicio y fin de cada etapa, respectivamente. Esto refleja un comportamiento de la planta, que resulta ser físicamente esperable y coherente. 
 
 \section{Identificación de modelos FOPDT}
+Un modelo FOPDT en este caso, resume la dinámica de la planta bajo las condiciones concretas en las que se
+está realizando la identificación. Ante esto, es completamente normal que los parámetros varíen entre plantas 
+y regiones de operación; no obstante, es de esperar que los valores buscados en la ecuación~\ref{eq:G_fopdt}, 
+$K$ y $\tau$ sean mayores a cero, y $\theta$ mayor o igual a cero, para una planta térmica estable y con un 
+calentamiento ascendente.
+
+\subsection{Identificación FOPDT del ensayo escalón}
+
+La evolución de este proceso de identificación FOPDT, se desarrolló de la siguiente manera
+según se muestra en la Figura~\ref{fig:identFOPDT_escalonQ1}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{identFOPDT_escalonQ1.png}
+        \caption{Identificación FOPDT del ensayo escalón}
+        \label{fig:identFOPDT_escalonQ1}
+\end{figure}
+
+El proceso de identificación se desarrolló sin contratiempos según se puede evidenciar en la gráfica. Mientras
+que los resultados arrojados por el proceso, se resumen en la Tabla~\ref{tab:resultados_FOPDT}.
+
+Estos resultados, permiten formar la función de transferencia resultante, con la forma de la ecuación \ref{eq:G_fopdt}, 
+tal como se muestra a continuación.
+
+\begin{equation}
+        \begin{aligned}
+                G{(s)} &= \frac{0.00495}{s + 0.00528} \cdot e^{-21.001 s} \\
+        \end{aligned}
+\label{eq:G_fopdt_escalon}
+\end{equation}
+
+
+\subsection{Identificación FOPDT del ensayo multinivel}
+
+\begin{table}[H]
+    \centering
+    \caption{Resultados de la identificación FOPDT}
+    \label{tab:resultados_FOPDT}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\columnwidth}{@{}Ycccc@{}}
+        \toprule
+        \textbf{Ensayo} & \textbf{$K$} & \textbf{$\tau$ (s)} & \textbf{$\theta$ (s)} & \textbf{Ajuste (\%)} \\
+        \midrule
+                Escalón    & 0.937 & 189.293 & 21.001 & 96.36 \\
+                Multinivel & 0.980 & 208.731 & 13.000 & 94.93 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+
 
 \section{Resultados}
 \begin{table}[H]
