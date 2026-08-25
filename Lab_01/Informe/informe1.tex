@@ -104,6 +104,9 @@ planta, tal como se muestra en la ecuación \ref{eq:G_fopdt}.
 \label{eq:G_fopdt}
 \end{equation}
 
+En la siguiente tabla, se resume un registro inicial de la planta a tratar. Así como de las condiciones del entorno
+que resultan relevantes para la ejecución de este laboratorio. 
+
 \begin{table}[H]
   \centering
   \caption{Registro inicial de la planta y el entorno}
@@ -161,6 +164,48 @@ Adicionalmente, es necesario entender que una respuesta adecuada del LED solo ve
 exitosa del TCLab con el computador, pero no garantiza que la planta esté funcionando correctamente, ya que
 para esto es necesario evaluar el comportamiento de los elementos que componen la planta, así como su respuesta
 en conjunto.
+
+\section{Experimentos de Identificación}
+En esta sección se generan un conjunto de datos experimentales que posteriormente van a permitir la identificación de 
+la planta, esto mediante la relación dinámica entre la potencia aplicada ($Q_1$) y la temperatura medida ($T_1$). El proceso
+se lleva a cabo mediante dos experimentos principales, por un lado el ensayo escalón y por otro un ensayo multinivel.
+
+Cabe mencionar, que es estrictamente necesario tomar el tiempo que se requiera para la ejecución de ambas pruebas, dejando
+un periodo razonable entre cada una de ellas, para que las características que sean modificadas durante cada prueba, no interfieran
+en la generación de los datos experimentales.
+
+\subsection{Ensayo escalón}
+En este primer experimento, se aplica una entrada tipo escalón al sistema, fijando la potencia $Q_1$ en un valor
+del $50 \%$, tal como se muestra en la Figura~\ref{fig:experimento_escalonQ1}. 
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{experimento_escalonQ1.png}
+        \caption{Ensayo escalón aplicado al sistema, con $Q_1$ fijado en $50\%$}
+        \label{fig:experimento_escalonQ1}
+\end{figure}
+
+Como se muestra en la gráfica, al mantener la potencia de entrada en su valor fijo, la temperatura medida ($T_1$), va incrementando
+gradualmente, hasta que alcanza un valor de equilibrio al finalizar la prueba de aproximadamente unos $71.5~^\circ\mathrm{C}$.
+
+\subsection{Ensayo multinivel}
+Luego de dejar reposar la planta, con la intención de que se restablezcan las condiciones iniciales. 
+Se procede a realizar este segundo experimento, en el que se le aplican diferentes niveles de potencia a la entrada, de manera
+que se pueda conocer la evolución del sistema ante diferentes regiones de operación, según se muestra en la Figura~\ref{fig:experimento_multiQ1}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{experimento_multiQ1.png}
+        \caption{Ensayo multinivel aplicado al sistema}
+        \label{fig:experimento_multiQ1}
+\end{figure}
+
+Tal como se observa en la gráfica, se examinaron seis etapas con seis niveles de potencia distintos cada uno ($0\%$, $10\%$, $20\%$, $30\%$, $40\%$ y $50\%$).
+Y resulta especialmente importante analizar la evolución de la temperatura, la cual rompe su pico máximo en cada etapa, cada vez
+que el porcentaje de potencia aplicada se ve incrementado; además, se observa un crecimiento y decrecimiento graduales en la temperatura, 
+al inicio y fin de cada etapa, respectivamente. Esto refleja un comportamiento de la planta, que resulta ser físicamente esperable y coherente. 
+
+\section{Identificación de modelos FOPDT}
 
 \section{Resultados}
 \begin{table}[H]

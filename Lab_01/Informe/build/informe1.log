@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  23 AUG 2026 18:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  24 AUG 2026 18:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1342,87 +1342,88 @@ LaTeX Font Info:    Trying to load font information for U+trsy on input line 70.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/trsym\utrsy.fd
 File: utrsy.fd 2000/06/25v1.0transformation symbol font definitions
 )
-<./fig/TCLab.jpg, id=56, 1161.58969pt x 896.59969pt>
+<./fig/TCLab.jpg, id=72, 1161.58969pt x 896.59969pt>
 File: ./fig/TCLab.jpg Graphic file (type jpg)
 <use ./fig/TCLab.jpg>
 Package pdftex.def Info: ./fig/TCLab.jpg  used on input line 91.
 (pdftex.def)             Requested size: 158.7558pt x 122.52696pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--123
+Underfull \hbox (badness 10000) in paragraph at lines 126--126
 []|\T1/phv/m/n/10 Matías A. Ca-ma-
  []
 
-
-Underfull \vbox (badness 3690) has occurred while \output is active []
-
- [1{C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+[1{C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
  <./fig/TCLab.jpg>]
-<./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png, id=80, 361.35pt x 216.81pt>
+<./fig/experimento_escalonQ1.png, id=97, 393.762pt x 239.367pt>
+File: ./fig/experimento_escalonQ1.png Graphic file (type png)
+<use ./fig/experimento_escalonQ1.png>
+Package pdftex.def Info: ./fig/experimento_escalonQ1.png  used on input line 183.
+(pdftex.def)             Requested size: 219.8163pt x 133.62822pt.
+<./fig/experimento_multiQ1.png, id=100, 403.398pt x 216.81pt>
+File: ./fig/experimento_multiQ1.png Graphic file (type png)
+<use ./fig/experimento_multiQ1.png>
+Package pdftex.def Info: ./fig/experimento_multiQ1.png  used on input line 198.
+(pdftex.def)             Requested size: 219.8163pt x 118.1409pt.
+ [2 <./fig/experimento_escalonQ1.png> <./fig/experimento_multiQ1.png>]
+<./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png, id=109, 361.35pt x 216.81pt>
 File: ./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png Graphic file (type png)
 <use ./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png>
-Package pdftex.def Info: ./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png  used on input line 186.
+Package pdftex.def Info: ./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png  used on input line 231.
 (pdftex.def)             Requested size: 195.39433pt x 117.23775pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-<./fig/Escalones.png, id=82, 361.35pt x 216.81pt>
+<./fig/Escalones.png, id=110, 361.35pt x 216.81pt>
 File: ./fig/Escalones.png Graphic file (type png)
 <use ./fig/Escalones.png>
-Package pdftex.def Info: ./fig/Escalones.png  used on input line 193.
+Package pdftex.def Info: ./fig/Escalones.png  used on input line 238.
 (pdftex.def)             Requested size: 195.39433pt x 117.23775pt.
-<./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png, id=83, 361.35pt x 216.81pt>
+<./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png, id=111, 361.35pt x 216.81pt>
 File: ./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png Graphic file (type png)
 <use ./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png>
-Package pdftex.def Info: ./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png  used on input line 200.
+Package pdftex.def Info: ./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png  used on input line 245.
 (pdftex.def)             Requested size: 195.39433pt x 117.23775pt.
-<./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png, id=84, 361.131pt x 219.876pt>
+<./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png, id=112, 361.131pt x 219.876pt>
 File: ./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png Graphic file (type png)
 <use ./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png>
-Package pdftex.def Info: ./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png  used on input line 224.
+Package pdftex.def Info: ./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png  used on input line 269.
 (pdftex.def)             Requested size: 195.39433pt x 118.96611pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2 <./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png> <./fig/Escalones.png> <./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png>]
-<./fig/Escalon.png, id=97, 361.35pt x 219.438pt>
+<./fig/Escalon.png, id=113, 361.35pt x 219.438pt>
 File: ./fig/Escalon.png Graphic file (type png)
 <use ./fig/Escalon.png>
-Package pdftex.def Info: ./fig/Escalon.png  used on input line 231.
+Package pdftex.def Info: ./fig/Escalon.png  used on input line 276.
 (pdftex.def)             Requested size: 195.39433pt x 118.65881pt.
-<./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png, id=98, 361.131pt x 216.591pt>
+<./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png, id=114, 361.131pt x 216.591pt>
 File: ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png Graphic file (type png)
 <use ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png>
-Package pdftex.def Info: ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png  used on input line 238.
+Package pdftex.def Info: ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png  used on input line 283.
 (pdftex.def)             Requested size: 195.39433pt x 117.18874pt.
-
-Overfull \hbox (6.28033pt too wide) in paragraph at lines 311--311
+ [3 <./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png> <./fig/Escalones.png> <./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png> <./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png> <./fig/Escalon.png> <./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png>]
+Overfull \hbox (6.28033pt too wide) in paragraph at lines 356--356
  []|\T1/phv/b/n/10 Parámetro 
  []
 
 
-Overfull \hbox (23.58485pt too wide) in paragraph at lines 311--311
+Overfull \hbox (23.58485pt too wide) in paragraph at lines 356--356
  []|$\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 937801 []C\OML/cmm/m/it/10 = \OT1/cmr/m/n/10 %[]$| 
  []
 
 
-Overfull \hbox (3.66801pt too wide) in paragraph at lines 311--311
+Overfull \hbox (3.66801pt too wide) in paragraph at lines 356--356
  []|$\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 203932 []C\OML/cmm/m/it/10 = \OT1/cmr/m/n/10 %[]$| 
  []
 
 
-Overfull \hbox (15.39026pt too wide) in paragraph at lines 311--311
+Overfull \hbox (15.39026pt too wide) in paragraph at lines 356--356
  []|$\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 016926 []C\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 ( %[]s)$| 
  []
 
-[3 <./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png> <./fig/Escalon.png> <./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 \tf@thm=\write6
 \openout6 = `informe1.thm'.
 
- [4
-
-] (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.aux
+ [4] (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.aux
 LaTeX Info: Redefining \sptext on input line 12.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
@@ -1432,23 +1433,23 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `informe1.out' has not changed.
-(rerunfilecheck)             Checksum: 0444F8E04A951F80F7E6D0C5CF7D1488;1913.
+(rerunfilecheck)             Checksum: CD1A6C593C49AD6DE728EB52FE32538F;2608.
 Package logreq Info: Writing requests to 'informe1.run.xml'.
 \openout1 = `informe1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58048 strings out of 467867
- 1377686 string characters out of 5418334
- 2469009 words of memory out of 5000000
- 86248 multiletter control sequences out of 15000+600000
+ 58078 strings out of 467867
+ 1378510 string characters out of 5418334
+ 2469210 words of memory out of 5000000
+ 86272 multiletter control sequences out of 15000+600000
  757896 words of font info for 164 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 117i,14n,121p,1245b,1996s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,14n,121p,1245b,1809s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.pdf (4 pages, 661941 bytes).
+Output written on c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.pdf (4 pages, 778696 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 144 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 46 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 
