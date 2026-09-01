@@ -1,10 +1,13 @@
 \documentclass[journal]{IEEEtran}
 
-\usepackage{circuitikz}          % antes de babel
+\usepackage{circuitikz}   
 \usepackage{tikz}
 \usepackage[spanish, es-noshorthands]{babel}
 \usepackage{float}
 \usepackage{instructivo}
+\usepackage{tabularx}
+\usepackage{array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \graphicspath{{./}{./fig/}}
 \usepackage[natbib=true,style=trad-unsrt,backend=biber]{biblatex}
 \addbibresource{literatura.bib}
@@ -100,6 +103,158 @@ planta, tal como se muestra en la ecuación \ref{eq:G_fopdt}.
         \end{aligned}
 \label{eq:G_fopdt}
 \end{equation}
+
+En la siguiente tabla, se resume un registro inicial de la planta a tratar. Así como de las condiciones del entorno
+que resultan relevantes para la ejecución de este laboratorio. 
+
+\begin{table}[H]
+  \centering
+  \caption{Registro inicial de la planta y el entorno}
+  \label{tab:registro_planta}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\columnwidth}{@{}lX@{}}
+    \toprule
+    \textbf{Dato} & \textbf{Valor registrado} \\
+    \midrule
+    Código de la TCLab           & -- \\
+    Fecha y hora                 & 12/08/2026 - 7:40~a.m. \\
+    Integrantes                  & Matías~A.~Camacho~y~Juan~P.~Elizondo\\
+    Puerto de comunicación       & /dev/ttyS0 (Linux) \\
+    Temperatura ambiente inicial & $24.51~^\circ\mathrm{C}$ \\
+    Observaciones del montaje    & N/A \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{Verificación previa de la planta}
+En esta sección se verifica el correcto funcionamiento de la planta, así como de las 
+distintas conexiones necesarias para el correcto desarrollo del laboratorio.
+Tal como lo indica la guía de laboratorio \cite{guia_tclab_2026}, se resumen los aspectos
+verificados en la Tabla~\ref{tab:verificacion_planta}.
+
+\begin{table}[H]
+  \centering
+  \caption{Resultados de la verificación previa}
+  \label{tab:verificacion_planta}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\columnwidth}{@{}Ycc@{}}
+    \toprule
+    \textbf{Verificación} & \textbf{Satisfactoria} & \textbf{No satisfactoria} \\
+    \midrule
+    Conexión con la TCLab        & x &   \\
+    Respuesta del LED            & x &   \\
+    Lectura de $T_1$             & x &   \\
+    Lectura de $T_2$             & x &   \\
+    Respuesta térmica ante $Q_1$ & x &   \\
+    $Q_1 = 0~\%$ al finalizar    &   & x \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+De los aspectos evaluados, el único que no resultó como se esperaba fue
+el porcentaje de $Q_1$ al finalizar la prueba, el cual no se encontraba en $0~\%$.
+Sin embargo, esto no afecta el desarrollo del laboratorio, y responde únicamente a la ventana
+de tiempo de simulación.
+
+En cuanto a la respuesta de los sensores de temperatura, el valor inicial para $T_1$ fue de $24.68~^\circ\mathrm{C}$, el de 
+$T_2$ fue de $24.34~^\circ\mathrm{C}$ y por lo tanto el $\Delta T$ inicial fue de $0.34~^\circ\mathrm{C}$, lo cual es
+bastante aceptable dado su valor. 
+
+Adicionalmente, es necesario entender que una respuesta adecuada del LED solo verifica la conexión
+exitosa del TCLab con el computador, pero no garantiza que la planta esté funcionando correctamente, ya que
+para esto es necesario evaluar el comportamiento de los elementos que componen la planta, así como su respuesta
+en conjunto.
+
+\section{Experimentos de Identificación}
+En esta sección se generan un conjunto de datos experimentales que posteriormente van a permitir la identificación de 
+la planta, esto mediante la relación dinámica entre la potencia aplicada ($Q_1$) y la temperatura medida ($T_1$). El proceso
+se lleva a cabo mediante dos experimentos principales, por un lado el ensayo escalón y por otro un ensayo multinivel.
+
+Cabe mencionar, que es estrictamente necesario tomar el tiempo que se requiera para la ejecución de ambas pruebas, dejando
+un periodo razonable entre cada una de ellas, para que las características que sean modificadas durante cada prueba, no interfieran
+en la generación de los datos experimentales.
+
+\subsection{Ensayo escalón}
+En este primer experimento, se aplica una entrada tipo escalón al sistema, fijando la potencia $Q_1$ en un valor
+del $50 \%$, tal como se muestra en la Figura~\ref{fig:experimento_escalonQ1}. 
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{experimento_escalonQ1.png}
+        \caption{Ensayo escalón aplicado al sistema, con $Q_1$ fijado en $50\%$}
+        \label{fig:experimento_escalonQ1}
+\end{figure}
+
+Como se muestra en la gráfica, al mantener la potencia de entrada en su valor fijo, la temperatura medida ($T_1$), va incrementando
+gradualmente, hasta que alcanza un valor de equilibrio al finalizar la prueba de aproximadamente unos $71.5~^\circ\mathrm{C}$.
+
+\subsection{Ensayo multinivel}
+Luego de dejar reposar la planta, con la intención de que se restablezcan las condiciones iniciales. 
+Se procede a realizar este segundo experimento, en el que se le aplican diferentes niveles de potencia a la entrada, de manera
+que se pueda conocer la evolución del sistema ante diferentes regiones de operación, según se muestra en la Figura~\ref{fig:experimento_multiQ1}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{experimento_multiQ1.png}
+        \caption{Ensayo multinivel aplicado al sistema}
+        \label{fig:experimento_multiQ1}
+\end{figure}
+
+Tal como se observa en la gráfica, se examinaron seis etapas con seis niveles de potencia distintos cada uno ($0\%$, $10\%$, $20\%$, $30\%$, $40\%$ y $50\%$).
+Y resulta especialmente importante analizar la evolución de la temperatura, la cual rompe su pico máximo en cada etapa, cada vez
+que el porcentaje de potencia aplicada se ve incrementado; además, se observa un crecimiento y decrecimiento graduales en la temperatura, 
+al inicio y fin de cada etapa, respectivamente. Esto refleja un comportamiento de la planta, que resulta ser físicamente esperable y coherente. 
+
+\section{Identificación de modelos FOPDT}
+Un modelo FOPDT en este caso, resume la dinámica de la planta bajo las condiciones concretas en las que se
+está realizando la identificación. Ante esto, es completamente normal que los parámetros varíen entre plantas 
+y regiones de operación; no obstante, es de esperar que los valores buscados en la ecuación~\ref{eq:G_fopdt}, 
+$K$ y $\tau$ sean mayores a cero, y $\theta$ mayor o igual a cero, para una planta térmica estable y con un 
+calentamiento ascendente.
+
+\subsection{Identificación FOPDT del ensayo escalón}
+
+La evolución de este proceso de identificación FOPDT, se desarrolló de la siguiente manera
+según se muestra en la Figura~\ref{fig:identFOPDT_escalonQ1}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{identFOPDT_escalonQ1.png}
+        \caption{Identificación FOPDT del ensayo escalón}
+        \label{fig:identFOPDT_escalonQ1}
+\end{figure}
+
+El proceso de identificación se desarrolló sin contratiempos según se puede evidenciar en la gráfica. Mientras
+que los resultados arrojados por el proceso, se resumen en la Tabla~\ref{tab:resultados_FOPDT}.
+
+Estos resultados, permiten formar la función de transferencia resultante, con la forma de la ecuación \ref{eq:G_fopdt}, 
+tal como se muestra a continuación.
+
+\begin{equation}
+        \begin{aligned}
+                G{(s)} &= \frac{0.00495}{s + 0.00528} \cdot e^{-21.001 s} \\
+        \end{aligned}
+\label{eq:G_fopdt_escalon}
+\end{equation}
+
+
+\subsection{Identificación FOPDT del ensayo multinivel}
+
+\begin{table}[H]
+    \centering
+    \caption{Resultados de la identificación FOPDT}
+    \label{tab:resultados_FOPDT}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\columnwidth}{@{}Ycccc@{}}
+        \toprule
+        \textbf{Ensayo} & \textbf{$K$} & \textbf{$\tau$ (s)} & \textbf{$\theta$ (s)} & \textbf{Ajuste (\%)} \\
+        \midrule
+                Escalón    & 0.937 & 189.293 & 21.001 & 96.36 \\
+                Multinivel & 0.980 & 208.731 & 13.000 & 94.93 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
 
 
 

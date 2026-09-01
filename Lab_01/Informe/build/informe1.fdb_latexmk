@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/informe1"] 0 "build/informe1.bcf" "build/informe1.bbl" "build/informe1" 1787159174.06272 -1
-  "build/informe1.bcf" 1787159173 107829 50379f760b9501ea74ba245bf306bcc4 "pdflatex"
+["biber build/informe1"] 1787671677.54667 "build/informe1.bcf" "build/informe1.bbl" "build/informe1" 1787672718.75135 0
+  "build/informe1.bcf" 1787672718 107899 df6306c49758688b3ae6b61ca686bd9d "pdflatex"
   "literatura.bib" 1787158381 431 9ea1c7e6996834c7f0fff732ecc79186 ""
   (generated)
   "build/informe1.bbl"
   "build/informe1.blg"
   (rewritten before read)
-["pdflatex"] 1787159169.9748 "c:/LaTex/informes_LabControl/Lab_01/Informe/informe1.tex" "build/informe1.pdf" "informe1" 1787159174.06391 0
+["pdflatex"] 1787672714.09513 "c:/LaTex/informes_LabControl/Lab_01/Informe/informe1.tex" "build/informe1.pdf" "informe1" 1787672718.75254 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1779754248 85260 dc52748e22016f0b1395c31b09e26c4f ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1773891445 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1773891449 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -254,11 +254,11 @@
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/vmargin/vmargin.sty" 1090548324 7055 5eae49c3f07fead60d92def0a4f5c30f ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/was/icomma.sty" 1665850770 1018 df058db1896806f044e2233bb506d425 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "build/informe1.aux" 1787159173 5922 444e70ba47103639f2a939dc1dda8278 "pdflatex"
-  "build/informe1.bbl" 1787158384 1924 89b4c78f23e7d31f54f6ac77c3f783a2 "biber build/informe1"
-  "build/informe1.out" 1787159173 1694 49a75e5951fcd1fc115d3369574fccb3 "pdflatex"
-  "build/informe1.run.xml" 1787159173 2441 c8b40abd1423029856b6fc089856dced "pdflatex"
-  "c:/LaTex/informes_LabControl/Lab_01/Informe/informe1.tex" 1787159166 12142 2ae81534e6da816b51841fcccd4cb782 ""
+  "build/informe1.aux" 1787672718 9208 bf91ac49acef4b064c5d66482217d801 "pdflatex"
+  "build/informe1.bbl" 1787671681 1924 89b4c78f23e7d31f54f6ac77c3f783a2 "biber build/informe1"
+  "build/informe1.out" 1787672718 3162 46a41861fa6513ed89c6f4a8cb446e28 "pdflatex"
+  "build/informe1.run.xml" 1787672718 2441 c8b40abd1423029856b6fc089856dced "pdflatex"
+  "c:/LaTex/informes_LabControl/Lab_01/Informe/informe1.tex" 1787672710 19672 b86025e8e5c8c41d3b1ff852e9e911be ""
   "fig/Escalon.png" 1787087753 42397 e74058596f4ac91566da1156941ce383 ""
   "fig/Escalones.png" 1787087753 53730 bba3f89e9c97baaa5d49875fa670f5bc ""
   "fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png" 1787087753 77203 b49d601818dc51ab756341854425c78a ""
@@ -266,7 +266,10 @@
   "fig/TCLab.jpg" 1787157832 225360 8a048b0a14dd1b1603b03020cd1f0b13 ""
   "fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png" 1787087753 61296 5c2cc84c2152a58dd6820bd3a8dbbe2c ""
   "fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png" 1787087753 66112 eb4c3e0f78a318d2b2931f794a27798d ""
-  "informe1.tex" 1787159166 12142 2ae81534e6da816b51841fcccd4cb782 ""
+  "fig/experimento_escalonQ1.png" 1787616570 59924 972ecee3579a13dbf69cf242a932e364 ""
+  "fig/experimento_multiQ1.png" 1787617508 82217 0d196cbadd142c46b95321ce158c03dd ""
+  "fig/identFOPDT_escalonQ1.png" 1787670945 132863 75ca8bdbf630443c1cc3e079b30a869f ""
+  "informe1.tex" 1787672710 19672 b86025e8e5c8c41d3b1ff852e9e911be ""
   "instructivo.sty" 1787087753 9674 70b3f92c58cb68227f7c1e4e4c4168c2 ""
   (generated)
   "build/informe1.aux"
