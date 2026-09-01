@@ -258,6 +258,133 @@ Se obtienen los siguientes resultados.
 
 \section{Análisis y Validación}
 
+Siguiendo en la etapa \textit{Model in the loop}, se simularon tres casos de control, tomando como referencia una temperatura de $50\,^\circ\mathrm{C}$.
+
+% ============================================
+% Referencia = 50 °C
+% ============================================
+\begin{table}[h!]
+\centering
+\caption{Comparación de resultados para $T_{ref} = 50\,^\circ$C}
+\label{tab:comparacion_50}
+\resizebox{\columnwidth}{!}{%
+\footnotesize
+\begin{tabular}{lccc}
+\hline
+\textbf{Métrica} & \textbf{Caso 1} & \textbf{Caso 2} & \textbf{Caso 3} \\
+\hline
+Tiempo de subida (s)              & 82.05   & 82.05   & 82.05   \\
+Tiempo de estab. (s)              & 161.80  & 161.80  & 161.80  \\
+Sobreimpulso (\%)                 & 0.02    & 0.02    & 0.02    \\
+Error estacionario (°C)           & -0.0000 & -0.0000 & -0.0000 \\
+Temp. máxima (°C)                 & 50.00   & 50.00   & 50.00   \\
+Potencia mín. (\%)                & 26.66   & 26.66   & 26.66   \\
+Potencia máx. (\%)                & 88.98   & 88.98   & 88.98   \\
+$t$ con $Q_{cmd}$ f. rango (s)    & 0.00    & 0.00    & 0.00    \\
+\hline
+\end{tabular}%
+}
+\footnotesize
+\vspace{2pt}
+\begin{tabular}{@{}p{0.98\columnwidth}@{}}
+Caso 1: PI ideal sin saturación. \quad
+Caso 2: PI con saturación, sin anti-windup. \quad
+Caso 3: PI con saturación y anti-windup.
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Cumplimiento con saturación y anti-windup ($T_{ref} = 50\,^\circ$C)}
+\label{tab:cumplimiento_50}
+\footnotesize
+\begin{tabular}{lc}
+\hline
+\textbf{Criterio} & \textbf{Cumple} \\
+\hline
+$t_s \leq 600$ s        & Sí \\
+Sobreimpulso $\leq 5\%$ & Sí \\
+$0 \leq Q_1 \leq 90\%$  & Sí \\
+$T_1 \leq 90$ °C        & Sí \\
+\hline
+\end{tabular}
+\end{table}
+
+Posteriormente se simuló con el valor de referencia de $70\,^\circ\mathrm{C}$, obteniendo los siguientes resultados. En cuanto a límites y antiwindup, en el caso de referencia de $50\,^\circ\mathrm{C}$, las tres trayectorias (con AW, sin AW y PI ideal) eran idénticas.
+
+
+% ============================================
+% Referencia = 70 °C
+% ============================================
+\begin{table}[h!]
+\centering
+\caption{Comparación de resultados para $T_{ref} = 70\,^\circ$C}
+\label{tab:comparacion_70}
+\resizebox{\columnwidth}{!}{%
+\footnotesize
+\begin{tabular}{lccc}
+\hline
+\textbf{Métrica} & \textbf{Caso 1} & \textbf{Caso 2} & \textbf{Caso 3} \\
+\hline
+Tiempo de subida (s)              & 82.05   & 113.36  & 213.20  \\
+Tiempo de estab. (s)              & 161.80  & 535.14  & 544.08  \\
+Sobreimpulso (\%)                 & 0.02    & 7.88    & 0.00    \\
+Error estacionario (°C)           & -0.0000 & -0.0013 & 0.0014  \\
+Temp. máxima (°C)                 & 70.01   & 73.55   & 70.00   \\
+Potencia mín. (\%)                & 47.98   & 47.98   & 47.98   \\
+Potencia máx. (\%)                & 160.17  & 90.00   & 90.00   \\
+$t$ con $Q_{cmd}$ f. rango (s)    & 67.00   & 127.00  & 64.00   \\
+\hline
+\end{tabular}%
+}
+\footnotesize
+\vspace{2pt}
+\begin{tabular}{@{}p{0.98\columnwidth}@{}}
+Caso 1: PI ideal sin saturación. \quad
+Caso 2: PI con saturación, sin anti-windup. \quad
+Caso 3: PI con saturación y anti-windup.
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Cumplimiento con saturación y anti-windup ($T_{ref} = 70\,^\circ$C)}
+\label{tab:cumplimiento_70}
+\footnotesize
+\begin{tabular}{lc}
+\hline
+\textbf{Criterio} & \textbf{Cumple} \\
+\hline
+$t_s \leq 600$ s        & Sí \\
+Sobreimpulso $\leq 5\%$ & Sí \\
+$0 \leq Q_1 \leq 90\%$  & Sí \\
+$T_1 \leq 90$ °C        & Sí \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\linewidth]{Arranque25a70.png}
+        \caption{Temperatura}
+        \label{fig:arranque}
+\end{figure}
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\linewidth]{Q1.png}
+        \caption{Potencia aplicada}
+        \label{fig:q1}
+\end{figure}
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\linewidth]{AccionIntegral.png}
+        \caption{Acción integral}
+        \label{fig:accion}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
