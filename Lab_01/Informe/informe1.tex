@@ -227,18 +227,38 @@ según se muestra en la Figura~\ref{fig:identFOPDT_escalonQ1}.
 El proceso de identificación se desarrolló sin contratiempos según se puede evidenciar en la gráfica. Mientras
 que los resultados arrojados por el proceso, se resumen en la Tabla~\ref{tab:resultados_FOPDT}.
 
-Estos resultados, permiten formar la función de transferencia resultante, con la forma de la ecuación \ref{eq:G_fopdt}, 
+Estos resultados, permiten formar la función de transferencia resultante, al factorizar la ecuación \ref{eq:G_fopdt}, 
 tal como se muestra a continuación.
 
 \begin{equation}
         \begin{aligned}
-                G{(s)} &= \frac{0.00495}{s + 0.00528} \cdot e^{-21.001 s} \\
+                G_{FOPDT,~esc.}(s) &= \frac{0.00495}{s + 0.00528} \cdot e^{-21.001 s} \\
         \end{aligned}
 \label{eq:G_fopdt_escalon}
 \end{equation}
 
 
 \subsection{Identificación FOPDT del ensayo multinivel}
+
+De igual manera que en el punto anterior, se presentan las gráficas que meustran la evolución
+del proceso de identificación FOPDT del ensayo multinivel, según se muestra en la Figura~\ref{fig:identFOPDT_multiQ1}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{identFOPDT_multiQ1.png}
+        \caption{Identificación FOPDT del ensayo multinivel}
+        \label{fig:identFOPDT_multiQ1}
+\end{figure}
+
+Los resultados obtenidos en este proceso, se resumen en la Tabla~\ref{tab:resultados_FOPDT}. Con los mismos, se
+puede formar la función de transferencia resultante, al factorizar la ecuación \ref{eq:G_fopdt}, según se muestra. 
+
+\begin{equation}
+        \begin{aligned}
+                G_{FOPDT,~mul.}(s) &= \frac{0.00469}{s + 0.00479} \cdot e^{-13.00 s} \\
+        \end{aligned}
+\label{eq:G_fopdt_multi}
+\end{equation}
 
 \begin{table}[H]
     \centering
@@ -251,6 +271,29 @@ tal como se muestra a continuación.
         \midrule
                 Escalón    & 0.937 & 189.293 & 21.001 & 96.36 \\
                 Multinivel & 0.980 & 208.731 & 13.000 & 94.93 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Identificación por medio del System Identification Toolbox}
+Acá se implementa otro método de identificación, utilizando el mismo conjunto de datos tanto para el
+ensayo escalón como para el ensayo multinivel. Los resultados obtenidos mediante esta herramienta, se resumen 
+en la siguiente Tabla~\ref{tab:resultados_SIT}.
+
+Este procedimiento, no entregó resultados tan satisfactorios. Especialmente en el caso del ensayo multinivel, en
+el que el porcentaje de ajuste fue de un 58.52\%, lo cual es bastante bajo y no permite confiar en el modelo obtenido.
+
+\begin{table}[H]
+    \centering
+    \caption{Resultados de la identificación mediante SIT}
+    \label{tab:resultados_SIT}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\columnwidth}{@{}Ycccc@{}}
+        \toprule
+        \textbf{Ensayo} & \textbf{$K$} & \textbf{$\tau$ (s)} & \textbf{$\theta$ (s)} & \textbf{Ajuste (\%)} \\
+        \midrule
+                Escalón    & 1.423 & 195.760 & 2.009 & 94.74 \\
+                Multinivel & 1.916 & 596.948 & 0.000 & 58.52 \\
         \bottomrule
     \end{tabularx}
 \end{table}
