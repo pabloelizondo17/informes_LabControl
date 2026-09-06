@@ -666,6 +666,12 @@ INPUT .\fig\AccionIntegral.png
 INPUT .\fig\AccionIntegral.png
 INPUT .\fig\AccionIntegral.png
 INPUT .\fig\AccionIntegral.png
+INPUT .\fig\controlador_PI_CSD.png
+INPUT .\fig\controlador_PI_CSD.png
+INPUT .\fig\controlador_PI_CSD.png
+INPUT .\fig\controlador_PI_CSD.png
+INPUT .\fig\controlador_PI_CSD.png
+INPUT .\fig\controlador_PI_CSD.png
 OUTPUT c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.thm
 INPUT c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.aux
 INPUT c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.out

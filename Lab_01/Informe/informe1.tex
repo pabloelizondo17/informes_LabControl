@@ -583,6 +583,57 @@ $T_1 \leq 90$ °C        & Sí \\
         \label{fig:accion}
 \end{figure}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Diseño alternativo con Control System Designer}
+Como una propuesta alternativa al diseño del controlador PI, se utilizó
+Control System Designer, para el diseño de un controlador PI que logre
+mantener el tiempo de establecimiento por debajo de los 600 s, así como
+un porcentaje de sobreimpulso menor al 5\%.
+Utilizando la forma general de un controlador PI, el mismo quedó de la siguiente
+manera:
+
+\begin{equation}
+        G_{c}(s) = K_p+\frac{K_i}{s} = 2.6113 + \frac{0.01666}{s}
+\end{equation}
+
+La respuesta del sistema con este controlador ya implementado, 
+se muestra en la Figura~\ref{fig:PI_CSD}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{controlador_PI_CSD.png}
+        \caption{Respuesta del sistema con controlador PI diseñado en CSD.}
+        \label{fig:PI_CSD}
+\end{figure}
+
+La respuesta mostrada, cuenta con un $T_s = 360$ s y un $\% OS = 2.63\%$, según se
+describe en la Tabla~\ref{tab:comp_PI}. Ambos valores
+cumplen bastante bien con los límites establecidos previamente. 
+
+\begin{table}[H]
+  \centering
+  \caption{Comparación de los diseños PI}
+  \label{tab:comp_PI}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\columnwidth}{@{}Ycc@{}}
+    \toprule
+    \textbf{Parámetro} & \textbf{PI-SIMC} & \textbf{PI-CSD} \\
+    \midrule
+    $K_p~{(\%/ ^\circ\mathrm{C})}$  & 3.2039 & 2.6113\\
+    $K_i~{(\%/ ^\circ\mathrm{C})}$  & 0.01692 & 0.01666\\
+    $T_i~{(s)}$                     & 84.004 & 156.74\\
+    Margen de fase ${(^\circ)}$     &  & 70\\
+    Frecuencia de cruce ${(rad/s)}$ &  & 0.013\\
+    $T_s~{(s)}$ con retardo exacto  &  & 360\\
+    $M_p~{(\%)}$ con retardo exacto &  & 2.63\\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
