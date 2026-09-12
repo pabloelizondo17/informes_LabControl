@@ -1,0 +1,44 @@
+xil_interface.o: \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/pil/xil_interface.c \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rtwtypes.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_solver.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller_types.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller_private.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller.h \
+ C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_interface.h \
+ C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_interface_common.h \
+ C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_common.h \
+ C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_interface_lib.h \
+ C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_error_codes.h \
+ C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_data_stream.h
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rtwtypes.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_solver.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller_types.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller_private.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller.h:
+
+C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_interface.h:
+
+C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_interface_common.h:
+
+C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_common.h:
+
+C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_interface_lib.h:
+
+C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_error_codes.h:
+
+C:/PROGRA~1/MATLAB/R2025b/toolbox/rtw/targets/pil/c/xil_data_stream.h:

@@ -1,0 +1,20 @@
+MW_PWMDriver.o: \
+ C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_PWMDriver.c \
+ C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_PWMDriver.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rtwtypes.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/wiring_private.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/variants/leonardo/pins_arduino.h
+
+C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_PWMDriver.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rtwtypes.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/wiring_private.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/variants/leonardo/pins_arduino.h:

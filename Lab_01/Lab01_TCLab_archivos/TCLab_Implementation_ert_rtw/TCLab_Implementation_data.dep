@@ -1,0 +1,65 @@
+TCLab_Implementation_data.o: \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/TCLab_Implementation_ert_rtw/TCLab_Implementation_data.c \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/TCLab_Implementation_ert_rtw/TCLab_Implementation.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rtwtypes.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_extmode.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/sysran_types.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_solver.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h \
+ C:/PROGRA~1/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_AnalogIn.h \
+ C:/PROGRA~1/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_SVD.h \
+ C:/PROGRA~1/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_PWM.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/TCLab_Implementation_ert_rtw/TCLab_Implementation_types.h \
+ C:/PROGRA~1/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_SVD.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller_implementacion/Controller_implementacion.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller_implementacion/Controller_implementacion_types.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rt_nonfinite.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rtwtypes.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/TCLab_Implementation_ert_rtw/MW_target_hardware_resources.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/variants/leonardo/pins_arduino.h
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/TCLab_Implementation_ert_rtw/TCLab_Implementation.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rtwtypes.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_extmode.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/sysran_types.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_solver.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h:
+
+C:/PROGRA~1/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_AnalogIn.h:
+
+C:/PROGRA~1/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_SVD.h:
+
+C:/PROGRA~1/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_PWM.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/TCLab_Implementation_ert_rtw/TCLab_Implementation_types.h:
+
+C:/PROGRA~1/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_SVD.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller_implementacion/Controller_implementacion.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller_implementacion/Controller_implementacion_types.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rt_nonfinite.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rtwtypes.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/TCLab_Implementation_ert_rtw/MW_target_hardware_resources.h:
+
+C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/variants/leonardo/pins_arduino.h:

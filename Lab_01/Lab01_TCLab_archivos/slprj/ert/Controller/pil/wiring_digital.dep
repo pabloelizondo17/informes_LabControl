@@ -1,0 +1,14 @@
+wiring_digital.o: \
+ C:/ProgramData/MATLAB/SupportPackages/R2025b/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/wiring_digital.c \
+ C:/ProgramData/MATLAB/SupportPackages/R2025b/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/wiring_private.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2025b/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2025b/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/variants/standard/pins_arduino.h
+
+C:/ProgramData/MATLAB/SupportPackages/R2025b/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/wiring_private.h:
+
+C:/ProgramData/MATLAB/SupportPackages/R2025b/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+
+C:/ProgramData/MATLAB/SupportPackages/R2025b/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/variants/standard/pins_arduino.h:

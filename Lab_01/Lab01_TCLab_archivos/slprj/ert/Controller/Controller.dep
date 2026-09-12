@@ -1,0 +1,23 @@
+Controller.o: \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller.c \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rtwtypes.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_solver.h \
+ C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller_types.h \
+ C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller_private.h
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/_sharedutils/rtwtypes.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_solver.h:
+
+C:/PROGRA~1/MATLAB/R2025b/simulink/include/rtw_continuous.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller_types.h:
+
+C:/Users/matia/Downloads/Lab01_TCLab_MIL/slprj/ert/Controller/Controller_private.h:

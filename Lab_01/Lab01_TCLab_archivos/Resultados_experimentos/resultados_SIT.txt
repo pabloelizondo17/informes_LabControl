@@ -1,0 +1,137 @@
+Modelo con System Identification Toolbox de Matlab
+
+_____________________________
+Escalon
+
+
+--------------------------------------------------------------------------------
+Algorithm: Nonlinear least squares with automatically chosen line search method
+--------------------------------------------------------------------------------
+Initial estimate:
+  Current cost: 43.9249
+
+Iteration 1:
+  Current cost: 0.452697  Previous cost: 43.9249
+  Name     New Value    Previous Value   Direction
+  Kp:      1.42295      1.42348          -0.000522661
+  1/Tp1:   0.00515967   0.00513344       2.62295e-05
+  Td:      3.38159      5.00005          -1.61846
+  Step size: 3860.63
+  First-order optimality: 170654
+  Expected improvement: 2.25311%
+  Achieved improvement: 98.9694%
+Iteration 2:
+  Current cost: 0.448268  Previous cost: 0.452697
+  Name     New Value    Previous Value   Direction
+  Kp:      1.4236       1.42295          0.00064305
+  1/Tp1:   0.00511565   0.00515967       -4.40208e-05
+  Td:      2.32159      3.38159          -1.06
+  Step size: 5.96465
+  First-order optimality: 8467.9
+  Expected improvement: 1.67426%
+  Achieved improvement: 0.978392%
+Iteration 3:
+  Current cost: 0.448034  Previous cost: 0.448268
+  Name     New Value    Previous Value   Direction
+  Kp:      1.42365      1.4236           5.26576e-05
+  1/Tp1:   0.00510832   0.00511565       -7.33341e-06
+  Td:      2.00997      2.32159          -0.311616
+  Step size: 3.43049
+  First-order optimality: 516.974
+  Expected improvement: 0.116771%
+  Achieved improvement: 0.0523323%
+Iteration 4:
+  Current cost: 0.448034  Previous cost: 0.448034
+  Name     New Value    Previous Value   Direction
+  Kp:      1.42365      1.42365          2.92152e-07
+  1/Tp1:   0.00510828   0.00510832       -3.4551e-08
+  Td:      2.0094       2.00997          -0.000573186
+  Step size: 0.0654151
+  First-order optimality: 2.37768
+  Expected improvement: 4.31789e-06%
+  Achieved improvement: 1.94601e-06%
+Estimation complete.
+Final improvement: 1.94601e-06%
+Final first-order optimality (largest slope): 2.37768
+Final cost: 0.448034
+
+Termination condition: Near (local) minimum, (norm(g) < tol)..
+Number of iterations: 4, Number of function evaluations: 9
+
+Status: Estimated using PROCEST
+Fit to estimation data: 94.74%, FPE: 0.449964
+
+
+_______________________________
+Multinivel
+
+Initializing model parameters...
+Initializing using polynomial estimator (BJ/OE)...
+Initialization complete.
+
+--------------------------------------------------------------------------------
+Algorithm: Nonlinear least squares with automatically chosen line search method
+--------------------------------------------------------------------------------
+Initial estimate:
+  Current cost: 229.855
+
+Iteration 1:
+  Current cost: 40.6872  Previous cost: 229.855
+  Name     New Value    Previous Value   Direction
+  Kp:      1.92039      1.97356          -0.0531748
+  1/Tp1:   0.00133382   0.00120107       0.000132751
+  Td:      0            6.00005          -116.918
+  Step size: 13556.4
+  First-order optimality: 2.8303e+06
+  Expected improvement: 0.402728%
+  Achieved improvement: 82.2988%
+Iteration 2:
+  Current cost: 33.3572  Previous cost: 40.6872
+  Name     New Value    Previous Value   Direction
+  Kp:      1.90247      1.92039          -0.0179198
+  1/Tp1:   0.00160052   0.00133382       0.000266697
+  Td:      0            0                0
+  Step size: 764.75
+  First-order optimality: 402137
+  Expected improvement: 0.437822%
+  Achieved improvement: 18.0154%
+Iteration 3:
+  Current cost: 32.9937  Previous cost: 33.3572
+  Name     New Value    Previous Value   Direction
+  Kp:      1.91675      1.90247          0.0142816
+  1/Tp1:   0.00165574   0.00160052       5.52213e-05
+  Td:      0            0                0
+  Step size: 581.087
+  First-order optimality: 64056.9
+  Expected improvement: 0.032637%
+  Achieved improvement: 1.08979%
+Iteration 4:
+  Current cost: 32.9771  Previous cost: 32.9937
+  Name     New Value    Previous Value   Direction
+  Kp:      1.91684      1.91675          8.89924e-05
+  1/Tp1:   0.00167105   0.00165574       1.53142e-05
+  Td:      0            0                0
+  Step size: 145.55
+  First-order optimality: 14494.9
+  Expected improvement: 0.00566005%
+  Achieved improvement: 0.0503217%
+Iteration 5:
+  Current cost: 32.9758  Previous cost: 32.9771
+  Name     New Value    Previous Value   Direction
+  Kp:      1.91685      1.91684          1.0162e-05
+  1/Tp1:   0.00167519   0.00167105       4.13458e-06
+  Td:      0            0                0
+  Step size: 42.2622
+  First-order optimality: 3985.91
+  Expected improvement: 0.00453396%
+  Achieved improvement: 0.00389184%
+Estimation complete.
+Final improvement: 0.00389184%
+Final first-order optimality (largest slope): 3985.91
+Final cost: 32.9758
+
+Termination condition: Near (local) minimum, (norm(g) < tol)..
+Number of iterations: 5, Number of function evaluations: 11
+
+Status: Estimated using PROCEST
+Fit to estimation data: 58.52%, FPE: 33.0508
