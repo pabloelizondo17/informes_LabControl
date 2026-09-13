@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>informe1.bcf</file>
+      <file>informeLab_v2.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>informe1.bbl</file>
+      <file>informeLab_v2.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -67,19 +67,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>informe1</infile>
+      <infile>informeLab_v2</infile>
     </cmdline>
     <input>
-      <file>informe1.bcf</file>
+      <file>informeLab_v2.bcf</file>
     </input>
     <output>
-      <file>informe1.bbl</file>
+      <file>informeLab_v2.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>informe1.bbl</file>
+      <file>informeLab_v2.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>informe1.bcf</file>
+      <file>informeLab_v2.bcf</file>
     </requires>
     <requires type="editable">
       <file>literatura.bib</file>
