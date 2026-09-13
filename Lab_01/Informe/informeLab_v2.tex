@@ -67,10 +67,20 @@ se aproxima mediante linealización analítica e identificación experimental.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Modelado e Identificación del Sistema}
 \subsection{Modelo físico}
-En la guía de laboratorio proporcionada \cite{guia_tclab_2026}, se desarrolló el modelo físico de la planta a partir de principios termodinámicos, 
-con los cuales resultó un modelo no lineal que posteriormente se linealizó al rededor de $Q = 50\%$.
-Tras el proceso de linealización, se logra llegar a la siguiente función de transferencia, correspondiente a la planta de
-análisis:
+En la guía de laboratorio proporcionada \cite{guia_tclab_2026}, se desarrolló el modelo físico de la planta (mostrada en la Figura~\ref{fig:planta}) 
+a partir de principios termodinámicos, con los cuales resultó el modelo no lineal descrito en la ecuación \ref{eq:nonlinear_model}.
+
+\begin{equation}
+        \begin{aligned}
+                \frac{dT}{dt} &= f(T, Q) \\
+                              &= \frac{U A (T_a - T) + \epsilon \sigma A (T_{\infty}^4 - T^4) + \alpha Q}{m c_p} \\
+        \end{aligned}
+\label{eq:nonlinear_model}
+\end{equation}
+
+Para este modelo, se considera que ante una entrada constante, es posible alcanzar la temperatura de equilibrio en el momento
+en el que la potencia suministrada por el calentador, sea igual a las pérdidas térmicas hacia el ambiente. Con lo cual se 
+linealizó al rededor de una entrada constante $Q = 50\%$, dando el siguiente resultado: 
 
 \begin{equation}
         \begin{aligned}
@@ -78,14 +88,13 @@ análisis:
                 \tau &= -\frac{1}{\gamma} \\
                 K    &= \frac{1}{\gamma} \\
         \end{aligned}
+\label{eq:linear_model}
 \end{equation}
 
-La planta utilizada en este laboratorio cuenta con dos calentadores resistivos ($Q_1$ y $Q_2$), así como dos sensores
-de temperatura ($T_1$ y $T_2$) según se muestra en la Figura \ref{fig:planta}. De las partes anteriores, se utilizan 
-únicamente el primer calentador, así como la temperatura medida por $T_1$.
+El cual es un modelo de primer orden linealizado, que logra representar con bastante exactitud
+la dinámica térmica de la planta, siempre que se trabaje con variaciones pequeñas alrededor
+del punto en el que se linealizó ($Q = 50\%$).
 
-De esta forma, al energizar $Q_1$, una parte de la energía eléctrica se convierte en calor, llegando a elevar la
-temperatura del conjunto calentador-sensor.
 
 \begin{figure}[H]
         \centering
@@ -94,40 +103,61 @@ temperatura del conjunto calentador-sensor.
         \label{fig:planta}
 \end{figure}
 
-Durante el proceso de identificación de modelos \textit{First-Order Plus Dead Time} (FOPDT), con el fin de representar la dinámica térmica dominante de 
-la TCLab, se utiliza un modelo de primer orden y con tiempo muerto, para la función de transferencia de la
-planta, tal como se muestra en la ecuación \ref{eq:G_fopdt}.
+\subsection{Identificación experimental}
+Para poder caracterizar la planta ya descrita, se realizaron dos tipos de pruebas experimentales (un ensayo
+con entrada escalón al $50\%$ y un ensayo con entrada de múltiples niveles), las cuales permitieron generar datos sobre
+el comportamiento real de la planta. 
+De los dos ensayos aplicados a la planta, el que resulta más interesante es el ensayo con múltiples niveles, que 
+conllevó poner a prueba su comportamiento ante entradas de $Q$ igual a $0\%$, $10\%$, $20\%$, 
+$30\%$, $40\%$ y $50\%$, según se evidencia en la Figura~\ref{fig:experimento_multiQ1}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{experimento_multiQ1.png}
+        \caption{Ensayo multinivel aplicado al sistema}
+        \label{fig:experimento_multiQ1}
+\end{figure}
+
+Posteriormente, se realizó una identificación por medio de modelos \textit{First Order Plus Dead Time}. 
+Un modelo FOPDT en este caso, resume la dinámica de la planta bajo las condiciones concretas en las que se
+está realizando la identificación. Uno de los objetivos de este proceso de identificación, es encontrar el 
+valor de las constantes que satisfacen la ecuación \ref{eq:FOPDT_model}, para la planta bajo análisis.
+
 
 \begin{equation}
         \begin{aligned}
                 G_p{(s)} &= \frac{K }{\tau s + 1} \cdot e^{-\theta s} \\
         \end{aligned}
-\label{eq:G_fopdt}
+\label{eq:FOPDT_model}
 \end{equation}
 
-En la siguiente tabla, se resume un registro inicial de la planta a tratar. Así como de las condiciones del entorno
-que resultan relevantes para la ejecución de este laboratorio. 
+Como método adicional, se llevó a cabo un proceso de identificación por medio del \textit{System Identification Toolbox}
+(SIT) de MatLab, utilizando el mismo conjunto de datos que se obtuvo para los ensayos experimentales ya mencionados. Todos los
+resultados obtenidos en estos procesos, se detallan en la Tabla~\ref{tab:resultados_FOPDT_SIT}.
 
 \begin{table}[H]
-  \centering
-  \caption{Registro inicial de la planta y el entorno}
-  \label{tab:registro_planta}
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabularx}{\columnwidth}{@{}lX@{}}
-    \toprule
-    \textbf{Dato} & \textbf{Valor registrado} \\
-    \midrule
-    Código de la TCLab           & -- \\
-    Fecha y hora                 & 12/08/2026 - 7:40~a.m. \\
-    Integrantes                  & Matías~A.~Camacho~y~Juan~P.~Elizondo\\
-    Puerto de comunicación       & /dev/ttyS0 (Linux) \\
-    Temperatura ambiente inicial & $24.51~^\circ\mathrm{C}$ \\
-    Observaciones del montaje    & N/A \\
-    \bottomrule
-  \end{tabularx}
+    \centering
+    \caption{Resultados de la identificación por modelos FOPDT y SIT}
+    \label{tab:resultados_FOPDT_SIT}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\columnwidth}{@{}Ycccc@{}}
+        \toprule
+        \textbf{Ensayo} & \textbf{\textit{K} (\textdegree C/\%)} & \textbf{$\boldsymbol{\tau}$ (s)} & \textbf{$\boldsymbol{\theta}$ (s)} & \textbf{Ajuste (\%)} \\
+        \midrule
+                Esc.~\textsubscript{FOPDT}    & 0.937 & 189.29 & 21.00 & 96.36 \\
+                Mult.~\textsubscript{FOPDT} & 0.980 & 208.73 & 13.00 & 94.93 \\
+                Esc.~\textsubscript{SIT}      & 1.423 & 195.76 & 2.009 & 94.74 \\
+                Mult.~\textsubscript{SIT}   & 1.916 & 596.94 & 0.000 & 58.52 \\
+        \bottomrule
+    \end{tabularx}
 \end{table}
 
-\subsection{Identificación experimental}
+Una forma de medir la fiabilidad de los resultados obtenidos, es por medio del porcentaje de ajuste, el cual
+indica qué tan parecido es el modelo obtenido, respecto al comportamiento real recopilado en los ensayos experimentales.
+Y como se observa en la Tabla~\ref{tab:resultados_FOPDT_SIT}, los modelos obtenidos por medio de la identificación FOPDT, 
+presentan un porcentaje de ajuste bastante bueno; por su parte, la identificación por medio del SIT resulta satisfactoria
+únicamente para el ensayo con entrada escalón (Esc.~\textsubscript{SIT}), ya que para el ensayo con entrada 
+multinivel (Mult.~\textsubscript{SIT}) el porcentaje de ajuste es bastante malo.
 
 
 \subsection{Validación y selección del modelo}

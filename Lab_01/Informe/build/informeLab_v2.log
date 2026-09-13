@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  13 SEP 2026 13:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  13 SEP 2026 14:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1326,42 +1326,44 @@ Package biblatex Info: ... file 'informeLab_v2.bbl' found.
  (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informeLab_v2.bbl)
 Package biblatex Info: Reference section=0 on input line 32.
 Package biblatex Info: Reference segment=0 on input line 32.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 71.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 73.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+trsy on input line 71.
+LaTeX Font Info:    Trying to load font information for U+trsy on input line 73.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/trsym\utrsy.fd
 File: utrsy.fd 2000/06/25v1.0transformation symbol font definitions
 )
-<./fig/TCLab.jpg, id=88, 1161.58969pt x 896.59969pt>
+<./fig/TCLab.jpg, id=89, 1161.58969pt x 896.59969pt>
 File: ./fig/TCLab.jpg Graphic file (type jpg)
 <use ./fig/TCLab.jpg>
-Package pdftex.def Info: ./fig/TCLab.jpg  used on input line 92.
+Package pdftex.def Info: ./fig/TCLab.jpg  used on input line 101.
 (pdftex.def)             Requested size: 158.7558pt x 122.52696pt.
+<./fig/experimento_multiQ1.png, id=91, 403.398pt x 216.81pt>
+File: ./fig/experimento_multiQ1.png Graphic file (type png)
+<use ./fig/experimento_multiQ1.png>
+Package pdftex.def Info: ./fig/experimento_multiQ1.png  used on input line 116.
+(pdftex.def)             Requested size: 219.8163pt x 118.1409pt.
+ [1{C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--127
-[]|\T1/phv/m/n/10 Matías A. Ca-ma-
+
+ <./fig/TCLab.jpg> <./fig/experimento_multiQ1.png>] (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd)
+Overfull \hbox (2.627pt too wide) in paragraph at lines 152--152
+[]|\T1/phv/m/n/10 Mult. $[]$|  
  []
 
-[1{C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
-
-
- <./fig/TCLab.jpg>]
 \tf@thm=\write6
 \openout6 = `informeLab_v2.thm'.
 
- [2
-
-] (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informeLab_v2.aux
+[2] (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informeLab_v2.aux
 LaTeX Info: Redefining \sptext on input line 10.
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
@@ -1377,17 +1379,17 @@ Package logreq Info: Writing requests to 'informeLab_v2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57979 strings out of 467867
- 1375089 string characters out of 5418334
- 2466884 words of memory out of 5000000
- 86190 multiletter control sequences out of 15000+600000
- 757896 words of font info for 164 fonts, out of 8000000 for 9000
+ 58050 strings out of 467867
+ 1376250 string characters out of 5418334
+ 2464082 words of memory out of 5000000
+ 86244 multiletter control sequences out of 15000+600000
+ 762875 words of font info for 178 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 117i,13n,121p,1250b,1999s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on c:\LaTex\informes_LabControl\Lab_01\Informe\build\informeLab_v2.pdf (2 pages, 340177 bytes).
+ 117i,15n,121p,1250b,1809s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on c:\LaTex\informes_LabControl\Lab_01\Informe\build\informeLab_v2.pdf (2 pages, 423997 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 31 named destinations out of 1000 (max. 500000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 
