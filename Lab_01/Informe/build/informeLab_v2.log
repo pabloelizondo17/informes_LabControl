@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  13 SEP 2026 14:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  13 SEP 2026 20:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1360,10 +1360,18 @@ Overfull \hbox (2.627pt too wide) in paragraph at lines 152--152
 []|\T1/phv/m/n/10 Mult. $[]$|  
  []
 
+<./fig/TCLab_PIL-Normal_results.png, id=116, 359.379pt x 278.349pt>
+File: ./fig/TCLab_PIL-Normal_results.png Graphic file (type png)
+<use ./fig/TCLab_PIL-Normal_results.png>
+Package pdftex.def Info: ./fig/TCLab_PIL-Normal_results.png  used on input line 197.
+(pdftex.def)             Requested size: 219.8163pt x 170.25134pt.
+[2 <./fig/TCLab_PIL-Normal_results.png>]
 \tf@thm=\write6
 \openout6 = `informeLab_v2.thm'.
 
-[2] (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informeLab_v2.aux
+ [3
+
+] (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informeLab_v2.aux
 LaTeX Info: Redefining \sptext on input line 10.
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
@@ -1379,17 +1387,17 @@ Package logreq Info: Writing requests to 'informeLab_v2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58050 strings out of 467867
- 1376250 string characters out of 5418334
- 2464082 words of memory out of 5000000
- 86244 multiletter control sequences out of 15000+600000
+ 58062 strings out of 467867
+ 1376656 string characters out of 5418334
+ 2464183 words of memory out of 5000000
+ 86254 multiletter control sequences out of 15000+600000
  762875 words of font info for 178 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 117i,15n,121p,1250b,1809s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,15n,121p,1250b,1994s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on c:\LaTex\informes_LabControl\Lab_01\Informe\build\informeLab_v2.pdf (2 pages, 423997 bytes).
+Output written on c:\LaTex\informes_LabControl\Lab_01\Informe\build\informeLab_v2.pdf (3 pages, 478261 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 183 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
+ 188 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -181,7 +181,29 @@ multinivel (Mult.~\textsubscript{SIT}) el porcentaje de ajuste es bastante malo.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Verificación Processor-in-the-loop (PIL)}
+En esta etapa, el controlador continúa siendo el sistema bajo prueba. La diferencia principal respecto a la
+etapa de SIL, es que el código del controlador pasa a ejecutarse en un procesador físico, mientras que
+la planta FOPDT junto con el retardo, la temperatura ambiente y la referencia, permanecen simulados en Simulink.
 
+El procesador físico utilizado para este proceso corresponde a un Arduino UNO R4 Minima, ya que cuenta con la 
+compatibilidad necesaria en temas de conexión para poder realizar esta prueba. La arquitectura utilizada, está
+distribuida en dos ramas, una de ellas es la ejecución Normal (utilizada a modo de referencia) y una ejecución
+PIL (correspondiente al código del controlador). La rama PIL se construye a partir de una copia de la Normal, modificando
+sus parámetros de manera que ambas ramas compartan únicamente las fuentes de $T_{ref}$ y $T_{amb}$; además, cada una
+debe de conservar su propia copia de retardo y de la planta FOPDT.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{TCLab_PIL-Normal_results.png}
+        \caption{Métricas de comparación Normal-PIL para $Q_1$ y $T_1$.}
+        \label{fig:TCLab_PIL-Normal_results}
+\end{figure}
+
+En la Figura~\ref{fig:TCLab_PIL-Normal_results} se muestra una comparación directa de la ejecución de las dos ramas que
+conforman a la etapa de PIL en desarrollo. Se puede observar como tanto para $Q_{1}$ como para $T_{1}$, las gráficas de la rama
+Normal y la rama PIL muestran resultados idénticos, llegando a superponerse completamente. Ante esto, las diferencias $\Delta Q_{1}$
+y $\Delta T_{1}$, muestran valores nulos en todo momento. Importante mencionar, que la nulidad de estas diferencias fue comprobada mediante
+una comparación muestra a muestra en los resultados de cada rama, eliminando la posibilidad de alguna omisión de diferencias debido a un análisis meramente gráfico.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
