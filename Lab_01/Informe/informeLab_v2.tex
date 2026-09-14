@@ -162,35 +162,346 @@ multinivel (Mult.~\textsubscript{SIT}) el porcentaje de ajuste es bastante malo.
 
 \subsection{Validación y selección del modelo}
 
+Para evaluar la capacidad predictiva de los modelos FOPDT identificados, se
+realizó una validación cruzada entre los dos conjuntos de datos experimentales.
+Primero se utilizó el modelo obtenido del ensayo escalón para predecir la
+respuesta ante la entrada multinivel.
+
+\begin{table}[H]
+        \centering
+        \caption{Validación cruzada del modelo FOPDT del ensayo escalón}
+        \label{tab:validacion_fopdt_escalon_v2}
+        \begin{tabular}{lc}
+                \hline
+                \textbf{Parámetro} & \textbf{Valor} \\
+                \hline
+                $K$ & $0.937801~^\circ\mathrm{C}/\%$ \\
+                $\tau$ & $189.293~\mathrm{s}$ \\
+                $\theta$ & $21.00~\mathrm{s}$ \\
+                RMSE & $1.2273~^\circ\mathrm{C}$ \\
+                $R^2$ & $0.99175$ \\
+                Ajuste & $90.92\%$ \\
+                \hline
+        \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\linewidth]{ValCruzadaMultiescalonConFOPDTdeEscalon.png}
+                \caption{Validación del modelo del ensayo escalón frente a datos multinivel.}
+                \label{fig:validacion_fopdt_escalon_v2}
+\end{figure}
+
+\begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\linewidth]{ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png}
+                \caption{Residuo de la validación del modelo del ensayo escalón frente a datos multinivel.}
+                \label{fig:residuo_fopdt_escalon_v2}
+\end{figure}
+
+Como segunda prueba, se utilizó el modelo obtenido del ensayo multinivel para
+predecir la respuesta ante la entrada escalón.
+
+\begin{table}[H]
+        \centering
+        \caption{Validación cruzada del modelo FOPDT del ensayo multinivel}
+        \label{tab:validacion_fopdt_multi_v2}
+        \begin{tabular}{lc}
+                \hline
+                \textbf{Parámetro} & \textbf{Valor} \\
+                \hline
+                $K$ & $0.980642~^\circ\mathrm{C}/\%$ \\
+                $\tau$ & $208.731~\mathrm{s}$ \\
+                $\theta$ & $13.000~\mathrm{s}$ \\
+                RMSE & $1.7692~^\circ\mathrm{C}$ \\
+                $R^2$ & $0.97211$ \\
+                Ajuste & $83.30\%$ \\
+                \hline
+        \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\linewidth]{ValCruzadaEscalonConFOPDTdeMultiescalon.png}
+                \caption{Validación del modelo multinivel frente a datos del ensayo escalón.}
+                \label{fig:validacion_fopdt_multi_v2}
+\end{figure}
+
+\begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\linewidth]{ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png}
+                \caption{Residuo de la validación del modelo multinivel frente a datos del ensayo escalón.}
+                \label{fig:residuo_fopdt_multi_v2}
+\end{figure}
+
+Los residuos de ambas validaciones presentan oscilaciones alrededor de cero.
+El modelo del ensayo escalón muestra errores aproximadamente entre
+$-1~^\circ\mathrm{C}$ y $1~^\circ\mathrm{C}$, mientras que el modelo multinivel
+presenta picos de mayor magnitud, cercanos a $\pm3~^\circ\mathrm{C}$.
+
+El modelo obtenido a partir del ensayo escalón se seleccionó como modelo
+nominal, debido a su mayor porcentaje de ajuste, su valor de $R^2$ más cercano
+a uno y su mejor desempeño en la validación cruzada. Por tanto, el modelo
+nominal utilizado en las etapas posteriores es
+
+\begin{equation}
+                G_{p,nom}(s)=\frac{0.937801e^{-21s}}{189.293s+1}.
+\label{eq:modelo_nominal_v2}
+\end{equation}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Diseño del controlador y evaluación MIL}
 \subsection{Diseño del controlador PI}
 
+Para el diseño del controlador PI se utilizó la forma
+
+\begin{equation}
+        G_c(s)=K_p+\frac{K_i}{s}=K_p\left(1+\frac{1}{T_i s}\right),
+\label{eq:pi_v2}
+\end{equation}
+
+con $K_i=K_p/T_i$. Aplicando las reglas SIMC al modelo nominal, se utilizaron
+las expresiones
+
+\begin{equation}
+        K_p=\frac{1}{K}\frac{\tau}{\tau_c+\theta},
+        \qquad
+        T_i=\min\{\tau,4(\tau_c+\theta)\}.
+\label{eq:simc_v2}
+\end{equation}
+
+Se seleccionó $\tau_c=2\theta=42~\mathrm{s}$, obteniéndose
+
+\begin{table}[H]
+    \centering
+    \caption{Parámetros del controlador PI-SIMC}
+    \label{tab:parametros_controlador_v2}
+    \begin{tabular}{lc}
+        \hline
+        \textbf{Parámetro} & \textbf{Valor} \\
+        \hline
+        $K_p$ & $3.203932$ \\
+        $T_i$ & $84.004~\mathrm{s}$ \\
+        $K_i$ & $0.016926~\mathrm{s}^{-1}$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+En consecuencia, el controlador diseñado es
+
+\begin{equation}
+        G_c(s)=3.20\left(1+\frac{1}{84.004s}\right).
+\label{eq:controlador_simc_v2}
+\end{equation}
+
 \subsection{Evaluación Model-in-the-Loop (MIL)}
 
+Durante la etapa MIL se evaluaron tres configuraciones: PI ideal sin
+saturación, PI con saturación sin anti-windup y PI con saturación y
+anti-windup. Las simulaciones se realizaron con referencias de $50~^\circ$C y
+$70~^\circ$C, considerando los límites $0\leq Q_1\leq90\%$ y
+$T_1\leq90~^\circ$C.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\caption{Resultados MIL para $T_{ref}=50~^\circ$C}
+\label{tab:mil_50_v2}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\hline
+\textbf{Métrica} & \textbf{PI ideal} & \textbf{Saturado} & \textbf{Con anti-windup} \\
+\hline
+Tiempo de subida (s) & 82.05 & 82.05 & 82.05 \\
+Tiempo de establecimiento (s) & 161.80 & 161.80 & 161.80 \\
+Sobreimpulso (\%) & 0.02 & 0.02 & 0.02 \\
+Error estacionario ($^\circ$C) & -0.0000 & -0.0000 & -0.0000 \\
+Potencia máxima (\%) & 88.98 & 88.98 & 88.98 \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+Para $T_{ref}=70~^\circ$C, la saturación se vuelve relevante. El PI sin
+limitación alcanza una potencia máxima de $160.17\%$, mientras que las
+configuraciones saturadas respetan el límite de $90\%$. Sin anti-windup se
+obtiene un sobreimpulso de $7.88\%$; con anti-windup, el sobreimpulso se
+reduce a $0\%$ y el tiempo de establecimiento es de $544.08~\mathrm{s}$.
+
+\begin{table}[H]
+\centering
+\caption{Resultados MIL para $T_{ref}=70~^\circ$C}
+\label{tab:mil_70_v2}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\hline
+\textbf{Métrica} & \textbf{PI ideal} & \textbf{Saturado} & \textbf{Con anti-windup} \\
+\hline
+Tiempo de subida (s) & 82.05 & 113.36 & 213.20 \\
+Tiempo de establecimiento (s) & 161.80 & 535.14 & 544.08 \\
+Sobreimpulso (\%) & 0.02 & 7.88 & 0.00 \\
+Error estacionario ($^\circ$C) & -0.0000 & -0.0013 & 0.0014 \\
+Potencia máxima (\%) & 160.17 & 90.00 & 90.00 \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+Los resultados muestran que el controlador con saturación y anti-windup
+cumple los requisitos de tiempo de establecimiento, sobreimpulso, potencia y
+temperatura. Por ello, esta configuración se seleccionó para las etapas de
+generación de código y verificación.
+
+
 \section{Generación de código y verificación de software}
 \subsection{Implementación del controlador}
-\subsection{Inspección del código generado}
-\subsection{Verificación Software-in-the-loop (SIL)}
+A partir del controlador PI--SIMC con saturación y anti-windup validado durante la
+etapa MIL, se definió el sistema bajo prueba (SUT, \textit{system under test}) que
+sería convertido en código C. La frontera del SUT se estableció de manera que
+únicamente el algoritmo de control quedara dentro de ella, dejando fuera de este
+límite el retardo de la planta, el modelo FOPDT discreto y la fuente de temperatura
+ambiente $T_{amb}$, los cuales pertenecen al banco de pruebas y no al controlador.
+La interfaz resultante del SUT quedó definida como
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+        T_{ref},\ T_1 \longrightarrow \text{Controller} \longrightarrow Q_1,
+\label{eq:interfaz_SUT}
+\end{equation}
+
+con un único período de muestreo $T_s = 1\,\text{s}$ para las tres señales.
+
+El controlador se separó del modelo MIL y se convirtió en un modelo referenciado
+(\texttt{Controller.slx}), conservando dentro de él únicamente el cálculo del
+error, la acción proporcional, el integrador discreto, la saturación en el
+intervalo $0$--$90\%$ y la lógica de anti-windup por \textit{clamping}. Las
+ganancias \texttt{Kp\_SIMC} y \texttt{Ki\_SIMC} se configuraron con
+\texttt{Storage Class = ExportedGlobal}, de modo que aparecieran de forma
+explícita y calibrable en el código generado, mientras que \texttt{Q\_min},
+\texttt{Q\_max} y \texttt{Ts} se dejaron como datos estructurales de la
+implementación. Para la generación de código se configuró
+\texttt{System target file = ert.tlc}, lenguaje C (estándar C99) y como
+plataforma de referencia \texttt{Intel~/~x86-64~(Windows64)}, ya que la
+verificación SIL se ejecuta sobre la computadora de desarrollo. La
+Tabla~\ref{tab:config_codigo} resume la configuración utilizada.
+
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Configuración de \texttt{Controller.slx} para generación de código}
+    \label{tab:config_codigo}
+    \begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}p{0.42\columnwidth} >{\raggedright\arraybackslash}p{0.52\columnwidth}@{}}
+        \toprule
+        \textbf{Parámetro} & \textbf{Valor} \\
+        \midrule
+        System target file & \texttt{ert.tlc} \\
+        Lenguaje / estándar & C / C99 \\
+        Solver & Fixed-step, discreto, $T_s$ \\
+        Hardware & Intel, x86-64 (Windows64) \\
+        Code interface packaging & Reusable function \\
+        Kp\_SIMC / Ki\_SIMC & \texttt{ExportedGlobal} \\
+        Q\_min / Q\_max / Ts & Datos estructurales \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+Antes de generar el código, se ejecutaron el \textit{Code Generation Advisor} y el
+\textit{Model Advisor} sobre \texttt{Controller.slx}. Ninguna comprobación
+presentó resultado \textit{Fail}; las advertencias obtenidas, relacionadas con
+recomendaciones de optimización para código de producción (por ejemplo, el
+soporte de valores no finitos), se revisaron y se decidió conservarlas, porque
+no afectan la compatibilidad del modelo con la generación de código para esta
+práctica.
+
+\subsection{Inspección del código generado}
+Con \texttt{Controller.slx} debidamente configurado, se generó el código
+mediante \texttt{slbuild("Controller", "ModelReferenceCoderTarget")}, obteniendo
+los archivos \texttt{Controller.c}, \texttt{Controller.h},
+\texttt{Controller\_private.h} y \texttt{Controller\_types.h}. La inspección de
+estos archivos permitió confirmar que la implementación generada conserva la
+estructura funcional definida durante MIL:
+
+\begin{itemize}
+    \item La interfaz declarada en \texttt{Controller.h} conserva únicamente las
+    entradas \texttt{rtu\_T\_ref} y \texttt{rtu\_T1}, y la salida
+    \texttt{rty\_Q1}; todas son de tipo \texttt{real\_T} (\texttt{double}).
+    \item El estado del integrador se almacena en la estructura
+    \texttt{DW\_Controller\_f\_T} mediante la variable
+    \texttt{Integrator\_DSTATE}, inicializada en cero.
+    \item Las ganancias \texttt{Kp\_SIMC} y \texttt{Ki\_SIMC} aparecen declaradas
+    como \texttt{extern} en \texttt{Controller.h} y definidas con sus valores
+    numéricos en \texttt{Controller.c}, confirmando que se conservan como
+    parámetros calibrables y no fueron sustituidas por constantes.
+    \item La saturación al intervalo $0$--$90\%$ y la lógica de anti-windup por
+    \textit{clamping} se implementan mediante estructuras condicionales
+    equivalentes a las utilizadas durante MIL, bloqueando la actualización del
+    integrador únicamente cuando esta agravaría la saturación.
+    \item Ningún archivo generado contiene ecuaciones asociadas al modelo FOPDT
+    ni al retardo de la planta, lo que confirma que el código representa
+    exclusivamente al controlador y no a la planta simulada.
+\end{itemize}
+
+Esta inspección estructural es una condición necesaria, pero no suficiente, para
+verificar la equivalencia numérica entre el modelo y el código generado; dicha
+equivalencia se evaluó mediante la prueba SIL descrita a continuación.
+
+\subsection{Verificación Software-in-the-loop (SIL)}
+Para verificar la equivalencia numérica entre el modelo de Simulink y el código
+generado, se construyó el banco de pruebas \texttt{TCLab\_Test\_SIL.slx}, en el
+cual dos instancias del mismo modelo referenciado \texttt{Controller.slx}
+(\texttt{Controller\_Normal} y \texttt{Controller\_SIL}) se ejecutan de manera
+simultánea: la primera en modo \texttt{Normal} y la segunda en modo
+\textit{Software-in-the-loop}. Cada instancia se conectó a su propia copia
+idéntica del modelo FOPDT discreto de la planta, con los mismos parámetros
+$K$, $\tau$, $\theta$, la misma temperatura ambiente y las mismas condiciones
+iniciales, de forma que cualquier diferencia observada pudiera atribuirse
+exclusivamente a la forma de ejecución del controlador.
+
+Se registraron las señales $Q_{1,\text{Normal}}$, $T_{1,\text{Normal}}$,
+$Q_{1,\text{SIL}}$ y $T_{1,\text{SIL}}$ durante una simulación de
+$t_{final} = 1800\,\text{s}$ con $T_s = 1\,\text{s}$ (1801 muestras por señal).
+La comparación se realizó mediante el script \texttt{A10\_comparar\_Normal\_SIL.m},
+que calcula las diferencias muestra a muestra
+
+\begin{equation}
+\begin{aligned}
+\Delta Q_1[k] &= Q_{1,\text{SIL}}[k] - Q_{1,\text{Normal}}[k], \\
+\Delta T_1[k] &= T_{1,\text{SIL}}[k] - T_{1,\text{Normal}}[k],
+\end{aligned}
+\label{eq:diferencias_SIL}
+\end{equation}
+
+junto con el máximo absoluto y el RMSE de cada una. Bajo el criterio adoptado
+para esta plataforma (coincidencia exacta muestra a muestra), el resultado
+global fue \texttt{[PASS/FAIL]}, con los indicadores resumidos en la
+Tabla~\ref{tab:resultados_SIL}.
+
+\begin{table}[H]
+    \centering
+    \caption{Métricas de la comparación Normal--SIL}
+    \label{tab:resultados_SIL}
+    \begin{tabularx}{\columnwidth}{@{}Yccc@{}}
+        \toprule
+        \textbf{Señal} & \textbf{Máx. absoluto} & \textbf{RMSE} & \textbf{Resultado} \\
+        \midrule
+        $\Delta Q_1$ & [0] & [0] & [PASS] \\
+        $\Delta T_1$ & [0] & [0] & [PASS] \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+La comparación del control normal con el control SIL mostró un total de 1801 muestras en un intervalo de tiempo de 0 a $1800~\text{s}$, así como con vectores de tiempo idénticos. Además, $Q_1$ y $T_1$ presentaron igualdad exacta (máximos absolutos, instantes del máximo y RMSE iguales a 0). Al obtener este resultado, i.e., que las ejeciones normal y SIL coincidieron exactamente muestra a muestra, se procedió a la siguiente etapa.
+
 \section{Verificación Processor-in-the-loop (PIL)}
 En esta etapa, el controlador continúa siendo el sistema bajo prueba. La diferencia principal respecto a la
 etapa de SIL, es que el código del controlador pasa a ejecutarse en un procesador físico, mientras que
 la planta FOPDT junto con el retardo, la temperatura ambiente y la referencia, permanecen simulados en Simulink.
 
-El procesador físico utilizado para este proceso corresponde a un Arduino UNO R4 Minima, ya que cuenta con la 
-compatibilidad necesaria en temas de conexión para poder realizar esta prueba. La arquitectura utilizada, está
-distribuida en dos ramas, una de ellas es la ejecución Normal (utilizada a modo de referencia) y una ejecución
-PIL (correspondiente al código del controlador). La rama PIL se construye a partir de una copia de la Normal, modificando
-sus parámetros de manera que ambas ramas compartan únicamente las fuentes de $T_{ref}$ y $T_{amb}$; además, cada una
-debe de conservar su propia copia de retardo y de la planta FOPDT.
+El procesador físico utilizado para este proceso corresponde a un Arduino UNO R4 Minima, ya que cuenta con la
+compatibilidad necesaria en temas de conexión para poder realizar esta prueba. La arquitectura utilizada está
+distribuida en dos ramas: una ejecución Normal, utilizada como referencia, y una ejecución PIL, correspondiente al
+código del controlador. Ambas ramas comparten únicamente las fuentes de $T_{ref}$ y $T_{amb}$, y conservan su
+propia copia del retardo y de la planta FOPDT.
 
 \begin{figure}[H]
         \centering
@@ -199,17 +510,12 @@ debe de conservar su propia copia de retardo y de la planta FOPDT.
         \label{fig:TCLab_PIL-Normal_results}
 \end{figure}
 
-En la Figura~\ref{fig:TCLab_PIL-Normal_results} se muestra una comparación directa de la ejecución de las dos ramas que
-conforman a la etapa de PIL en desarrollo. Se puede observar como tanto para $Q_{1}$ como para $T_{1}$, las gráficas de la rama
-Normal y la rama PIL muestran resultados idénticos, llegando a superponerse completamente. Ante esto, las diferencias $\Delta Q_{1}$
-y $\Delta T_{1}$, muestran valores nulos en todo momento. Importante mencionar, que la nulidad de estas diferencias fue comprobada mediante
-una comparación muestra a muestra en los resultados de cada rama, eliminando la posibilidad de alguna omisión de diferencias debido a un análisis meramente gráfico.
+En la Figura~\ref{fig:TCLab_PIL-Normal_results} se muestra una comparación directa de las dos ramas de la etapa PIL.
+Tanto para $Q_1$ como para $T_1$, las gráficas Normal y PIL muestran resultados idénticos y las diferencias
+$\Delta Q_1$ y $\Delta T_1$ son nulas. Esta conclusión se comprobó mediante una comparación muestra a muestra,
+no solamente mediante inspección gráfica.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Implementación experimental}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
