@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber informeLab_v2"] 1789358097.32019 "informeLab_v2.bcf" "informeLab_v2.bbl" "informeLab_v2" 1789440550.84667 0
-  "informeLab_v2.bcf" 1789440550 106979 1227529f10448d0177f9acd4e66cf02b "pdflatex"
+["biber informeLab_v2"] 1789358097.32019 "informeLab_v2.bcf" "informeLab_v2.bbl" "informeLab_v2" 1789444804.8594 0
+  "informeLab_v2.bcf" 1789444803 106979 1227529f10448d0177f9acd4e66cf02b "pdflatex"
   "literatura.bib" 1787179580 439 9ea1c7e6996834c7f0fff732ecc79186 ""
   (generated)
   "informeLab_v2.bbl"
   "informeLab_v2.blg"
   (rewritten before read)
-["pdflatex"] 1789440547.3242 "c:/Users/matia/Downloads/LabCaut/informes_LabControl/Lab_01/Informe/informeLab_v2.tex" "informeLab_v2.pdf" "informeLab_v2" 1789440550.84756 0
+["pdflatex"] 1789444799.42175 "c:/Users/matia/Downloads/LabCaut/informes_LabControl/Lab_01/Informe/informeLab_v2.tex" "informeLab_v2.pdf" "informeLab_v2" 1789444804.8613 0
   "C:/Users/matia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1781384296 124346 55158e4ffab625ef9c37e66c4ee22ffe ""
   "C:/Users/matia/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1741727281 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/matia/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1741727284 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -302,7 +302,7 @@
   "C:/Users/matia/AppData/Local/Programs/MiKTeX/tex/latex/vmargin/vmargin.sty" 1090548324 7055 5eae49c3f07fead60d92def0a4f5c30f ""
   "C:/Users/matia/AppData/Local/Programs/MiKTeX/tex/latex/was/icomma.sty" 1665850770 1018 df058db1896806f044e2233bb506d425 ""
   "C:/Users/matia/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "c:/Users/matia/Downloads/LabCaut/informes_LabControl/Lab_01/Informe/informeLab_v2.tex" 1789440546 39507 9b67a037afda3ca08e3be31a56a51149 ""
+  "c:/Users/matia/Downloads/LabCaut/informes_LabControl/Lab_01/Informe/informeLab_v2.tex" 1789444797 39499 d0b3c5f16762f909ddca6015925cc153 ""
   "fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png" 1786840081 77203 b49d601818dc51ab756341854425c78a ""
   "fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png" 1786840018 62869 3cbc4ed8518b2c720a3e3410d170fed4 ""
   "fig/TCLab.jpg" 1787179580 225360 8a048b0a14dd1b1603b03020cd1f0b13 ""
@@ -313,11 +313,11 @@
   "fig/controller_esquematico.pdf" 1789440342 34062 50f35b45cef23ffdf3c0d1cc17e31181 ""
   "fig/experimental_results_60C.png" 1789440113 64611 4fb8a27246c4a5fcd6d16923e6181c8a ""
   "fig/experimento_multiQ1.png" 1788284686 82217 0d196cbadd142c46b95321ce158c03dd ""
-  "informeLab_v2.aux" 1789440550 11233 e63a86cb379159e2e98ed501239a8cbe "pdflatex"
+  "informeLab_v2.aux" 1789444803 11233 e63a86cb379159e2e98ed501239a8cbe "pdflatex"
   "informeLab_v2.bbl" 1789358108 1787 223de8e53c8aeeee0b731305c5e2ee6f "biber informeLab_v2"
-  "informeLab_v2.out" 1789440550 3859 4e176b4415f4f1c24de4b12a1d495d1d "pdflatex"
-  "informeLab_v2.run.xml" 1789440550 2476 38ecb9c5bad553c99bd645f206feafc9 "pdflatex"
-  "informeLab_v2.tex" 1789440546 39507 9b67a037afda3ca08e3be31a56a51149 ""
+  "informeLab_v2.out" 1789444803 3859 4e176b4415f4f1c24de4b12a1d495d1d "pdflatex"
+  "informeLab_v2.run.xml" 1789444803 2476 38ecb9c5bad553c99bd645f206feafc9 "pdflatex"
+  "informeLab_v2.tex" 1789444797 39499 d0b3c5f16762f909ddca6015925cc153 ""
   "instructivo.sty" 1786814669 9943 70b3f92c58cb68227f7c1e4e4c4168c2 ""
   (generated)
   "informeLab_v2.aux"
