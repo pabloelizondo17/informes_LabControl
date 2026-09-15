@@ -19,6 +19,56 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{nise_control}{book}{}
+      \name{author}{1}{}{%
+        {{hash=6471dd8f12306fa47b496ba10e1e99e2}{%
+           family={Nise},
+           familyi={N\bibinitperiod},
+           given={Norman\bibnamedelima S.},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{6471dd8f12306fa47b496ba10e1e99e2}
+      \strng{fullhash}{6471dd8f12306fa47b496ba10e1e99e2}
+      \strng{bibnamehash}{6471dd8f12306fa47b496ba10e1e99e2}
+      \strng{authorbibnamehash}{6471dd8f12306fa47b496ba10e1e99e2}
+      \strng{authornamehash}{6471dd8f12306fa47b496ba10e1e99e2}
+      \strng{authorfullhash}{6471dd8f12306fa47b496ba10e1e99e2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{8}
+      \field{title}{Control Systems Engineering}
+      \field{year}{2019}
+    \endentry
+    \entry{ogata_control}{book}{}
+      \name{author}{1}{}{%
+        {{hash=72cb1e667ce543119df1b777c0db24de}{%
+           family={Ogata},
+           familyi={O\bibinitperiod},
+           given={Katsuhiko},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{72cb1e667ce543119df1b777c0db24de}
+      \strng{fullhash}{72cb1e667ce543119df1b777c0db24de}
+      \strng{bibnamehash}{72cb1e667ce543119df1b777c0db24de}
+      \strng{authorbibnamehash}{72cb1e667ce543119df1b777c0db24de}
+      \strng{authornamehash}{72cb1e667ce543119df1b777c0db24de}
+      \strng{authorfullhash}{72cb1e667ce543119df1b777c0db24de}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{title}{Modern Control Engineering}
+      \field{year}{2010}
+    \endentry
     \entry{guia_tclab_2026}{manual}{}
       \name{author}{1}{}{%
         {{hash=565447450a64e2af7894dda4254de942}{%
@@ -37,8 +87,8 @@
       \strng{authorbibnamehash}{565447450a64e2af7894dda4254de942}
       \strng{authornamehash}{565447450a64e2af7894dda4254de942}
       \strng{authorfullhash}{565447450a64e2af7894dda4254de942}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Laboratorio de Control Automático}

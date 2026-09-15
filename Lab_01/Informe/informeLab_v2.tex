@@ -73,7 +73,8 @@ sensores de temperatura, ampliamente utilizada para el estudio de estrategias de
 procesos industriales de mayor escala. El problema consiste en regular la temperatura $T_1$ hacia una
 referencia deseada mediante la manipulación de la potencia $Q_1$ suministrada al calentador, respetando
 los límites físicos de temperatura y de saturación del actuador. El objetivo de este trabajo es diseñar,
-verificar e implementar un controlador PI para la TCLab siguiendo el flujo completo de MBD.
+verificar e implementar un controlador PI para la TCLab siguiendo el flujo completo de MBD, con base en
+los fundamentos de sistemas de control presentados en Nise~\cite{nise_control} y Ogata~\cite{ogata_control}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Modelado e Identificación del Sistema}
@@ -268,7 +269,8 @@ nominal utilizado en las etapas posteriores es
 \section{Diseño del controlador y evaluación MIL}
 \subsection{Diseño del controlador PI}
 
-Para el diseño del controlador PI se utilizó la forma
+Para el diseño del controlador PI se utilizó la forma clásica presentada en la bibliografía de sistemas de
+control~\cite{nise_control,ogata_control}:
 
 \begin{equation}
         G_c(s)=K_p+\frac{K_i}{s}=K_p\left(1+\frac{1}{T_i s}\right),
@@ -721,8 +723,11 @@ verificación distinta e importante.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Biografías de los autores}
 
+
+
+\vspace{3cm}
+\section{Biografías de los autores}
  
 \begin{IEEEbiographynophoto}{Matías A. Camacho}
         Estudiante del Instituto Tecnológico de Costa Rica (TEC) en la carrera de ingeniería electrónica.
