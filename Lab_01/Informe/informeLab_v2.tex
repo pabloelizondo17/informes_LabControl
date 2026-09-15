@@ -45,24 +45,35 @@
 % make the title area
 \maketitle
 
+\begin{abstract}
+Este trabajo presenta el desarrollo, verificación e implementación de un controlador de temperatura
+para la planta \textit{TCLab}, siguiendo un flujo de Diseño Basado en Modelos desde el modelado hasta la
+implementación física. Se identificó un modelo FOPDT nominal y se diseñó un controlador PI--SIMC,
+cuya configuración con saturación y anti-windup fue la única en satisfacer los límites de potencia,
+temperatura y sobreimpulso durante la evaluación MIL. El código generado se verificó mediante pruebas
+SIL y PIL con equivalencia exacta respecto al modelo de referencia, y la implementación experimental
+sobre la TCLab confirmó el desempeño esperado, con sobreimpulso prácticamente nulo para
+{\boldmath$T_{ref}=60\,^\circ\text{C}$}
+\end{abstract}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introducción}
 
-\IEEEPARstart{E}{l} desarrollo de sistemas de control modernos para aplicaciones industriales y electrónicas 
-requiere metodologías que garanticen la precisión, seguridad y robustez del diseño antes de su despliegue 
-físico. En este contexto, el Diseño Basado en Modelos (\textit{Model-Based Design}) ofrece un marco estructurado 
-que utiliza modelos matemáticos ejecutables para representar tanto la planta física como los algoritmos de 
-control. Dentro de este ciclo de desarrollo, la prueba \textit{Model-in-the-Loop} (MIL) constituye la primera etapa de 
-verificación funcional, permitiendo simular y analizar el comportamiento del lazo cerrado en un entorno 
-puramente virtual.
+\IEEEPARstart{E}{l} desarrollo de sistemas de control modernos para aplicaciones industriales y electrónicas
+requiere metodologías que garanticen la precisión, seguridad y robustez del diseño antes de su despliegue
+físico. El Diseño Basado en Modelos (\textit{Model-Based Design}, MBD) responde a esta necesidad mediante
+un flujo estructurado que permite verificar progresivamente el sistema de control, desde su representación
+matemática hasta su ejecución sobre hardware real, antes de operarlo sobre la planta física.
 
-En esta práctica de laboratorio se aborda la caracterización, identificación y control de temperatura de la planta 
-física \textit{Temperature Control Lab} (TCLab). La dinámica térmica del sistema se analiza inicialmente a partir de primeros 
-principios mediante un balance de energía no lineal que contempla pérdidas por convección y radiación. Dado que las 
-técnicas de control lineal convencionales se basan en representaciones en el dominio de Laplace, el modelo no lineal 
-se aproxima mediante linealización analítica e identificación experimental.
+En este trabajo se aborda el control de temperatura de la \textit{Temperature Control Lab} (TCLab), una
+planta térmica de escritorio basada en Arduino que integra calentadores resistivos y sus respectivos
+sensores de temperatura, ampliamente utilizada para el estudio de estrategias de control sin recurrir a
+procesos industriales de mayor escala. El problema consiste en regular la temperatura $T_1$ hacia una
+referencia deseada mediante la manipulación de la potencia $Q_1$ suministrada al calentador, respetando
+los límites físicos de temperatura y de saturación del actuador. El objetivo de este trabajo es diseñar,
+verificar e implementar un controlador PI para la TCLab siguiendo el flujo completo de MBD.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Modelado e Identificación del Sistema}
@@ -171,30 +182,31 @@ respuesta ante la entrada multinivel.
         \centering
         \caption{Validación cruzada del modelo FOPDT del ensayo escalón}
         \label{tab:validacion_fopdt_escalon_v2}
-        \begin{tabular}{lc}
-                \hline
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{\columnwidth}{@{}YY@{}}
+                \toprule
                 \textbf{Parámetro} & \textbf{Valor} \\
-                \hline
-                $K$ & $0.937801~^\circ\mathrm{C}/\%$ \\
-                $\tau$ & $189.293~\mathrm{s}$ \\
-                $\theta$ & $21.00~\mathrm{s}$ \\
-                RMSE & $1.2273~^\circ\mathrm{C}$ \\
+                \midrule
+                $K$ (\textdegree C/\%) & $0.937801$ \\
+                $\tau$ (s) & $189.293$ \\
+                $\theta$ (s) & $21.00$ \\
+                RMSE (\textdegree C) & $1.2273$ \\
                 $R^2$ & $0.99175$ \\
-                Ajuste & $90.92\%$ \\
-                \hline
-        \end{tabular}
+                Ajuste (\%) & $90.92$ \\
+                \bottomrule
+        \end{tabularx}
 \end{table}
 
 \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.8\linewidth]{ValCruzadaMultiescalonConFOPDTdeEscalon.png}
+                \includegraphics[width=0.9\linewidth]{ValCruzadaMultiescalonConFOPDTdeEscalon.png}
                 \caption{Validación del modelo del ensayo escalón frente a datos multinivel.}
                 \label{fig:validacion_fopdt_escalon_v2}
 \end{figure}
 
 \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.8\linewidth]{ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png}
+                \includegraphics[width=0.9\linewidth]{ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png}
                 \caption{Residuo de la validación del modelo del ensayo escalón frente a datos multinivel.}
                 \label{fig:residuo_fopdt_escalon_v2}
 \end{figure}
@@ -206,30 +218,31 @@ predecir la respuesta ante la entrada escalón.
         \centering
         \caption{Validación cruzada del modelo FOPDT del ensayo multinivel}
         \label{tab:validacion_fopdt_multi_v2}
-        \begin{tabular}{lc}
-                \hline
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{\columnwidth}{@{}YY@{}}
+                \toprule
                 \textbf{Parámetro} & \textbf{Valor} \\
-                \hline
-                $K$ & $0.980642~^\circ\mathrm{C}/\%$ \\
-                $\tau$ & $208.731~\mathrm{s}$ \\
-                $\theta$ & $13.000~\mathrm{s}$ \\
-                RMSE & $1.7692~^\circ\mathrm{C}$ \\
+                \midrule
+                $K$ (\textdegree C/\%) & $0.980642$ \\
+                $\tau$ (s) & $208.731$ \\
+                $\theta$ (s) & $13.000$ \\
+                RMSE (\textdegree C) & $1.7692$ \\
                 $R^2$ & $0.97211$ \\
-                Ajuste & $83.30\%$ \\
-                \hline
-        \end{tabular}
+                Ajuste (\%) & $83.30$ \\
+                \bottomrule
+        \end{tabularx}
 \end{table}
 
 \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.8\linewidth]{ValCruzadaEscalonConFOPDTdeMultiescalon.png}
+                \includegraphics[width=0.9\linewidth]{ValCruzadaEscalonConFOPDTdeMultiescalon.png}
                 \caption{Validación del modelo multinivel frente a datos del ensayo escalón.}
                 \label{fig:validacion_fopdt_multi_v2}
 \end{figure}
 
 \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.8\linewidth]{ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png}
+                \includegraphics[width=0.9\linewidth]{ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png}
                 \caption{Residuo de la validación del modelo multinivel frente a datos del ensayo escalón.}
                 \label{fig:residuo_fopdt_multi_v2}
 \end{figure}
@@ -272,29 +285,77 @@ las expresiones
 \label{eq:simc_v2}
 \end{equation}
 
-Se seleccionó $\tau_c=2\theta=42~\mathrm{s}$, obteniéndose
+
+Se seleccionó $\tau_c=2\theta=42~\mathrm{s}$, obteniéndose:
 
 \begin{table}[H]
     \centering
     \caption{Parámetros del controlador PI-SIMC}
     \label{tab:parametros_controlador_v2}
-    \begin{tabular}{lc}
-        \hline
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\columnwidth}{@{}YY@{}}
+        \toprule
         \textbf{Parámetro} & \textbf{Valor} \\
-        \hline
-        $K_p$ & $3.203932$ \\
-        $T_i$ & $84.004~\mathrm{s}$ \\
-        $K_i$ & $0.016926~\mathrm{s}^{-1}$ \\
-        \hline
-    \end{tabular}
+        \midrule
+        $K_p$ & $3.204$ \\
+        $T_i$ (s) & $84.004$ \\
+        $K_i$ (s$^{-1}$) & $0.016926$ \\
+        \bottomrule
+    \end{tabularx}
 \end{table}
 
-En consecuencia, el controlador diseñado es
+
+En consecuencia, el controlador diseñado es:
 
 \begin{equation}
         G_c(s)=3.20\left(1+\frac{1}{84.004s}\right).
 \label{eq:controlador_simc_v2}
 \end{equation}
+
+Adicional al proceso seguido mediante SIMC, se utilizó
+Control System Designer, para el diseño de un controlador PI que logre
+mantener el tiempo de establecimiento por debajo de los 600 s, así como
+un porcentaje de sobreimpulso menor al 5\%.
+
+
+Utilizando la forma general de un controlador PI, el mismo quedó de la siguiente
+manera:
+
+\begin{equation}
+        G_{c}(s) = K_p+\frac{K_i}{s} = 2.6113 + \frac{0.01666}{s}
+\end{equation}
+
+La respuesta del sistema con este controlador ya implementado, 
+se muestra en la Figura~\ref{fig:PI_CSD}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{controlador_PI_CSD.png}
+        \caption{Respuesta del sistema con controlador PI diseñado en CSD. Ante entrada escalón unitario.}
+        \label{fig:PI_CSD}
+\end{figure}
+
+La respuesta mostrada, cumple con los requerimientos planteados. Sin embargo, si se compara
+con el diseño del PI mediante SIMC, este último presenta mejores métricas en cuanto
+al tiempo de establecimiento y al sobreimpulso, según se resume en la Tabla~\ref{tab:comp_PI}.
+
+\begin{table}[H]
+  \centering
+  \caption{Comparación de los diseños PI}
+  \label{tab:comp_PI}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\columnwidth}{@{}Ycc@{}}
+    \toprule
+    \textbf{Parámetro} & \textbf{PI-SIMC} & \textbf{PI-CSD} \\
+    \midrule
+    $K_p~{(\%/ ^\circ\mathrm{C})}$  & 3.2039 & 2.6113\\
+    $K_i~{(\%/ ^\circ\mathrm{C})}$  & 0.01692 & 0.01666\\
+    $T_i~{(s)}$                     & 84.004 & 156.74\\
+    $T_s~{(s)}$ con retardo exacto  & 161.8 & 360\\
+    $M_p~{(\%)}$ con retardo exacto & 0.02 & 2.63\\
+    \bottomrule
+  \end{tabularx}
+\end{table}
 
 \subsection{Evaluación Model-in-the-Loop (MIL)}
 
@@ -305,22 +366,21 @@ $70~^\circ$C, considerando los límites $0\leq Q_1\leq90\%$ y
 $T_1\leq90~^\circ$C.
 
 \begin{table}[H]
-\centering
-\caption{Resultados MIL para $T_{ref}=50~^\circ$C}
-\label{tab:mil_50_v2}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{lccc}
-\hline
-\textbf{Métrica} & \textbf{PI ideal} & \textbf{Saturado} & \textbf{Con anti-windup} \\
-\hline
-Tiempo de subida (s) & 82.05 & 82.05 & 82.05 \\
-Tiempo de establecimiento (s) & 161.80 & 161.80 & 161.80 \\
-Sobreimpulso (\%) & 0.02 & 0.02 & 0.02 \\
-Error estacionario ($^\circ$C) & -0.0000 & -0.0000 & -0.0000 \\
-Potencia máxima (\%) & 88.98 & 88.98 & 88.98 \\
-\hline
-\end{tabular}%
-}
+        \centering
+        \caption{Resultados MIL para $T_{ref}=50~^\circ$C}
+        \label{tab:mil_50_v2}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabularx}{\columnwidth}{@{}Yccc@{}}
+                \toprule
+                \textbf{Métrica} & \textbf{PI ideal} & \textbf{Saturado} & \textbf{Con anti-windup} \\
+                \midrule
+                Tiempo de subida (s) & 82.05 & 82.05 & 82.05 \\
+                Tiempo de establecimiento (s) & 161.80 & 161.80 & 161.80 \\
+                Sobreimpulso (\%) & 0.02 & 0.02 & 0.02 \\
+                Error estacionario ($^\circ$C) & -0.0000 & -0.0000 & -0.0000 \\
+                Potencia máxima (\%) & 88.98 & 88.98 & 88.98 \\
+                \bottomrule
+        \end{tabularx}
 \end{table}
 
 Para $T_{ref}=70~^\circ$C, la saturación se vuelve relevante. El PI sin
@@ -330,22 +390,21 @@ obtiene un sobreimpulso de $7.88\%$; con anti-windup, el sobreimpulso se
 reduce a $0\%$ y el tiempo de establecimiento es de $544.08~\mathrm{s}$.
 
 \begin{table}[H]
-\centering
-\caption{Resultados MIL para $T_{ref}=70~^\circ$C}
-\label{tab:mil_70_v2}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{lccc}
-\hline
-\textbf{Métrica} & \textbf{PI ideal} & \textbf{Saturado} & \textbf{Con anti-windup} \\
-\hline
-Tiempo de subida (s) & 82.05 & 113.36 & 213.20 \\
-Tiempo de establecimiento (s) & 161.80 & 535.14 & 544.08 \\
-Sobreimpulso (\%) & 0.02 & 7.88 & 0.00 \\
-Error estacionario ($^\circ$C) & -0.0000 & -0.0013 & 0.0014 \\
-Potencia máxima (\%) & 160.17 & 90.00 & 90.00 \\
-\hline
-\end{tabular}%
-}
+        \centering
+        \caption{Resultados MIL para $T_{ref}=70~^\circ$C}
+        \label{tab:mil_70_v2}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\columnwidth}{@{}Yccc@{}}
+        \toprule
+                \textbf{Métrica} & \textbf{PI ideal} & \textbf{Saturado} & \textbf{Con anti-windup} \\
+                \midrule
+                Tiempo de subida (s) & 82.05 & 113.36 & 213.20 \\
+                Tiempo de establecimiento (s) & 161.80 & 535.14 & 544.08 \\
+                Sobreimpulso (\%) & 0.02 & 7.88 & 0.00 \\
+                Error estacionario ($^\circ$C) & -0.0000 & -0.0013 & 0.0014 \\
+                Potencia máxima (\%) & 160.17 & 90.00 & 90.00 \\
+                \bottomrule
+        \end{tabularx}
 \end{table}
 
 Los resultados muestran que el controlador con saturación y anti-windup
@@ -390,6 +449,7 @@ Tabla~\ref{tab:config_codigo} resume la configuración utilizada.
     \small
     \caption{Configuración de \texttt{Controller.slx} para generación de código}
     \label{tab:config_codigo}
+    \renewcommand{\arraystretch}{1.5}
     \begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}p{0.42\columnwidth} >{\raggedright\arraybackslash}p{0.52\columnwidth}@{}}
         \toprule
         \textbf{Parámetro} & \textbf{Valor} \\
@@ -473,22 +533,8 @@ que calcula las diferencias muestra a muestra
 
 junto con el máximo absoluto y el RMSE de cada una. Bajo el criterio adoptado
 para esta plataforma (coincidencia exacta muestra a muestra), el resultado
-global fue \texttt{[PASS/FAIL]}, con los indicadores resumidos en la
-Tabla~\ref{tab:resultados_SIL}.
-
-\begin{table}[H]
-    \centering
-    \caption{Métricas de la comparación Normal--SIL}
-    \label{tab:resultados_SIL}
-    \begin{tabularx}{\columnwidth}{@{}Yccc@{}}
-        \toprule
-        \textbf{Señal} & \textbf{Máx. absoluto} & \textbf{RMSE} & \textbf{Resultado} \\
-        \midrule
-        $\Delta Q_1$ & [0] & [0] & [PASS] \\
-        $\Delta T_1$ & [0] & [0] & [PASS] \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+global fue \texttt{[PASS]}, con los indicadores resumidos en la
+Tabla~\ref{tab:resultados_SIL_PIL}.
 
 La comparación del control normal con el control SIL mostró un total de 1801 muestras en un intervalo de tiempo de 0 a $1800~\text{s}$, así como con vectores de tiempo idénticos. Además, $Q_1$ y $T_1$ presentaron igualdad exacta (máximos absolutos, instantes del máximo y RMSE iguales a 0). Al obtener este resultado, i.e., que las ejeciones normal y SIL coincidieron exactamente muestra a muestra, se procedió a la siguiente etapa.
 
@@ -512,18 +558,149 @@ propia copia del retardo y de la planta FOPDT.
 
 En la Figura~\ref{fig:TCLab_PIL-Normal_results} se muestra una comparación directa de las dos ramas de la etapa PIL.
 Tanto para $Q_1$ como para $T_1$, las gráficas Normal y PIL muestran resultados idénticos y las diferencias
-$\Delta Q_1$ y $\Delta T_1$ son nulas. Esta conclusión se comprobó mediante una comparación muestra a muestra,
-no solamente mediante inspección gráfica.
+$\Delta Q_{1}$ y $\Delta T_{1}$ son nulas. Esta conclusión se comprobó mediante una comparación muestra a muestra,
+y no únicamente mediante inspección visual.
+De la mano con lo anterior, se obtuvo el máximo absoluto y el RMSE, mostrándose los resultados correspondientes en la Tabla~\ref{tab:resultados_SIL_PIL}.
 
+\begin{table}[H]
+    \centering
+    \caption{Resultados de los procesos SIL y PIL}
+    \label{tab:resultados_SIL_PIL}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\columnwidth}{@{}Yccc@{}}
+        \toprule
+        \textbf{Señal} & \textbf{Máx. absoluto} & \textbf{RMSE} & \textbf{Resultado} \\
+        \midrule
+                $\Delta Q_{1,~(SIL)}$ & 0 & 0 & [PASS] \\
+                $\Delta T_{1,~(SIL)}$ & 0 & 0 & [PASS] \\
+                $\Delta Q_{1,~(PIL)}$ & 0 & 0 & [PASS] \\
+                $\Delta T_{1,~(PIL)}$ & 0 & 0 & [PASS] \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+Al terminar esta etapa de forma satisfactoria, es importante tener en cuenta que como se mencionó al inicio, hay varios elementos
+que aún siguien estando simulados, además de que el controlador fue probado en una procesador físico, por lo que aún no
+se ha puesto en funcionamiento en la planta física real; todo esto, implica que la prueba PIL no constituye una
+validación sobre la TCLab física, al no accionar físicamente los calentadores, no verificarse los canales
+de entrada/salida de la planta o bien no estar comprobando una ejecución de carácter determinístico en tiempo real.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Implementación experimental}
+En esta etapa, el controlador se ejecuta sobre el Arduino Leonardo integrado en la TCLab, por lo que
+Simulink deja de participar en la adquisición de la señal y en el cálculo del controlador: todo el
+procesamiento (lectura del sensor, cálculo de la ley de control y generación de la señal de actuación)
+se ejecuta íntegramente en el Arduino Leonardo. La computadora conserva únicamente un canal de
+comunicación con la aplicación embebida, empleado para observar variables internas y registrar las
+señales experimentales.
+
+Durante cada periodo de muestreo ($T_s = 1\,\text{s}$), el controlador lee la entrada analógica A0, la
+convierte a un valor de temperatura y aplica un filtrado a $T_1$ para evitar que las variaciones debidas
+a la resolución finita del convertidor A/D se interpreten como error de control. Con la señal filtrada
+de $T_1$ como entrada, el controlador calcula la señal PWM $Q_1$ que acciona el calentador~1 de la TCLab.
+
+La prueba experimental se ejecutó mediante \textit{Monitor \& Tune}, herramienta que permite visualizar
+en tiempo real la evolución de las señales de interés de la planta, así como la salida $Q_1$ del
+controlador, según se muestra en la Figura~\ref{fig:experimental_results_60C}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{experimental_results_60C.png}
+        \caption{Evolución de la implementación experimental a $T_{ref}$ = 60 °C}
+        \label{fig:experimental_results_60C}
+\end{figure}
+
+La Figura~\ref{fig:experimental_results_60C} evidencia el desempeño del controlador sobre la planta
+física, el cual reproduce el comportamiento esperado a partir del proceso de diseño. Tal como se advierte
+en la guía de laboratorio, $Q_1$ inicia en su límite superior ($90\%$) y disminuye progresivamente
+conforme $T_1$ se aproxima a la referencia de $60\,^\circ\text{C}$, valor que se alcanza alrededor de
+los $550~\mathrm{s}$ según la gráfica.
+
+Al comparar este resultado con el comportamiento obtenido durante la etapa MIL, la implementación física
+prácticamente no presenta sobreimpulso, en contraste con la configuración saturada sin anti-windup, que
+alcanzó un sobreimpulso de $7.88\%$ para $T_{ref}=70\,^\circ\text{C}$; en cambio, la configuración con
+anti-windup mantuvo un sobreimpulso nulo o cercano a cero en los casos evaluados. Dado que en la
+implementación experimental se utilizó una referencia intermedia entre los dos valores examinados en MIL
+($T_{ref}=60\,^\circ\text{C}$), es razonable que el tiempo de establecimiento obtenido se aproxime al
+reportado para el controlador con anti-windup en $T_{ref}=70\,^\circ\text{C}$
+($544.08~\mathrm{s}$) sin llegar a igualarlo, ya que una referencia menor implica una excursión térmica
+más pequeña y, por tanto, un establecimiento más rápido. % TODO: confirmar el tiempo de establecimiento real (ver nota abajo)
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discusión}
+El proceso de identificación mostró que el modelo FOPDT obtenido a partir del ensayo escalón
+constituye una aproximación adecuada de la planta únicamente en un entorno cercano al punto de
+linealización ($Q=50\%$). Esto se evidencia en la validación cruzada: mientras el modelo del ensayo
+escalón predice la respuesta multinivel con un ajuste superior al $90\%$ y residuos acotados entre
+$\pm1~^\circ$C, el modelo obtenido del ensayo multinivel presenta residuos de hasta $\pm3~^\circ$C
+al predecir el escalón. El pobre desempeño del modelo SIT identificado con datos multinivel
+($58.52\%$ de ajuste) refuerza esta observación: al recorrer un rango más amplio de potencias, las
+no linealidades del balance térmico (radiación y convección) dejan de ser despreciables, de modo que
+un único modelo de primer orden pierde validez fuera de la vecindad de su punto de operación.
+
+La comparación entre las configuraciones evaluadas en MIL permite explicar por qué la saturación y el
+anti-windup no pueden introducirse como una verificación tardía, sino que forman parte integral del
+diseño. El controlador PI ideal exige una potencia de hasta $160.17\%$ para $T_{ref}=70~^\circ$C, un
+valor físicamente inalcanzable en el actuador real. Al imponer la saturación sin compensación, aparece
+un sobreimpulso de $7.88\%$ producto del enrollamiento del integrador; el mecanismo anti-windup por
+\textit{clamping} elimina este sobreimpulso a costa de un mayor tiempo de establecimiento
+($544.08~\mathrm{s}$ frente a $535.14~\mathrm{s}$). Este resultado ilustra el compromiso habitual entre
+robustez frente a la saturación del actuador y velocidad de respuesta, y confirma que la configuración
+con anti-windup es la única que satisface simultáneamente los límites de potencia, temperatura y
+sobreimpulso exigidos.
+
+Las verificaciones SIL y PIL cumplen funciones complementarias dentro del flujo de \textit{Model-Based
+Design}. La prueba SIL demuestra que la generación automática de código no alteró el comportamiento
+numérico del controlador respecto del modelo de referencia, lo cual es una condición necesaria pero no
+suficiente, ya que ambas ramas todavía se ejecutan sobre la misma máquina de desarrollo. La prueba PIL
+extiende esta verificación al ejecutar el código sobre un procesador físico (Arduino Uno~R4~Minima),
+introduciendo por primera vez efectos reales de ejecución embebida sin abandonar el entorno simulado
+para la planta. Que ambas pruebas conserven una equivalencia exacta muestra a muestra respalda la
+integridad del código generado.
+
+Al comparar la implementación experimental con las predicciones de MIL se observan diferencias
+consistentes con las fuentes de incertidumbre no capturadas por el modelo FOPDT. El ensayo físico a
+$T_{ref}=60~^\circ$C prácticamente no presenta sobreimpulso, en línea con el comportamiento esperado
+del controlador con anti-windup, y su tiempo de establecimiento (aproximadamente $420~\mathrm{s}$)
+es coherente, considerando la referencia menor, con el obtenido en MIL para $T_{ref}=70~^\circ$C
+($544.08~\mathrm{s}$). Las discrepancias remanentes son atribuibles al ruido de medición, al filtrado de
+$T_1$, a la cuantización del ADC y a dinámicas no modeladas (radiación, convección variable, pérdidas
+no contempladas en la linealización), factores ausentes en la planta FOPDT simulada. En conjunto, el
+recorrido desde el modelo hasta la planta física evidencia que cada etapa del flujo MBD aporta una
+verificación distinta e importante.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
+
+\begin{itemize}
+    \item El modelo nominal seleccionado, $G_{p,nom}(s)=0.937801\,e^{-21s}/(189.293s+1)$, obtenido del
+    ensayo escalón, ofreció el mejor porcentaje de ajuste y el $R^2$ más cercano a uno en la validación
+    cruzada, mientras que el modelo identificado con datos multinivel mostró residuos hasta tres veces
+    mayores al predecir el ensayo escalón, evidenciando la validez limitada de una aproximación lineal
+    única fuera de la vecindad de $Q=50\%$.
+    \item De las tres configuraciones evaluadas en MIL, únicamente el PI--SIMC con saturación y
+    anti-windup cumplió simultáneamente los límites de potencia ($Q_1\leq90\%$), temperatura y
+    sobreimpulso nulo para $T_{ref}=70~^\circ$C, a costa de un tiempo de establecimiento mayor
+    ($544.08~\mathrm{s}$) que las configuraciones sin protección contra el enrollamiento del integrador.
+    \item Las verificaciones SIL y PIL mostraron equivalencia exacta muestra a muestra entre las señales
+    $Q_1$ y $T_1$ generadas por el modelo de referencia, el código C generado y su ejecución sobre el
+    procesador físico Arduino~Uno~R4~Minima, confirmando que la generación de código y su despliegue en
+    hardware conservaron la estructura e interfaz del controlador diseñado en Simulink.
+    \item La implementación experimental sobre la TCLab, con el controlador ejecutándose en el Arduino
+    Leonardo integrado a la planta, alcanzó $T_{ref}=60~^\circ$C con un sobreimpulso prácticamente nulo
+    y un tiempo de establecimiento cercano a los $420~\mathrm{s}$, resultado coherente con el
+    comportamiento previsto para el controlador con anti-windup durante la etapa MIL.
+    \item Las diferencias observadas entre el comportamiento simulado y el experimental se explican
+    principalmente por el ruido de medición, la cuantización y el filtrado de $T_1$, y por dinámicas
+    térmicas no lineales (radiación y convección) que el modelo FOPDT no captura, lo que confirma que el
+    flujo Modelado--Identificación--MIL--SIL--PIL--Implementación es necesario para exponer
+    progresivamente estas limitaciones antes de operar la planta física.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
