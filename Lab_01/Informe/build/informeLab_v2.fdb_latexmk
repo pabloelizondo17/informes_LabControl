@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/informeLab_v2"] 0 "build/informeLab_v2.bcf" "build/informeLab_v2.bbl" "build/informeLab_v2" 1789432039.52385 -1
-  "build/informeLab_v2.bcf" 1789432038 107829 50379f760b9501ea74ba245bf306bcc4 "pdflatex"
+["biber build/informeLab_v2"] 0 "build/informeLab_v2.bcf" "build/informeLab_v2.bbl" "build/informeLab_v2" 1789433011.34646 -1
+  "build/informeLab_v2.bcf" 1789433010 107829 50379f760b9501ea74ba245bf306bcc4 "pdflatex"
   "literatura.bib" 1787158381 431 9ea1c7e6996834c7f0fff732ecc79186 ""
   (generated)
   "build/informeLab_v2.bbl"
   "build/informeLab_v2.blg"
   (rewritten before read)
-["pdflatex"] 1789432034.25154 "c:/LaTex/informes_LabControl/Lab_01/Informe/informeLab_v2.tex" "build/informeLab_v2.pdf" "informeLab_v2" 1789432039.52513 0
+["pdflatex"] 1789433006.75511 "c:/LaTex/informes_LabControl/Lab_01/Informe/informeLab_v2.tex" "build/informeLab_v2.pdf" "informeLab_v2" 1789433011.34738 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1779754248 85260 dc52748e22016f0b1395c31b09e26c4f ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1773891445 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1773891449 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -297,11 +297,11 @@
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/vmargin/vmargin.sty" 1090548324 7055 5eae49c3f07fead60d92def0a4f5c30f ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/was/icomma.sty" 1665850770 1018 df058db1896806f044e2233bb506d425 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "build/informeLab_v2.aux" 1789432038 10829 433efb5b9a55a45cf7e9d9f6af74dee0 "pdflatex"
+  "build/informeLab_v2.aux" 1789433010 10893 f3ec45ed19f3bea6e9b864f9684d775a "pdflatex"
   "build/informeLab_v2.bbl" 1789353508 1924 89b4c78f23e7d31f54f6ac77c3f783a2 "biber build/informeLab_v2"
-  "build/informeLab_v2.out" 1789432038 3859 4e176b4415f4f1c24de4b12a1d495d1d "pdflatex"
-  "build/informeLab_v2.run.xml" 1789432038 2476 38ecb9c5bad553c99bd645f206feafc9 "pdflatex"
-  "c:/LaTex/informes_LabControl/Lab_01/Informe/informeLab_v2.tex" 1789432030 39126 5b1db1e2e0e3c21746ed3b06a79fe184 ""
+  "build/informeLab_v2.out" 1789433010 3859 4e176b4415f4f1c24de4b12a1d495d1d "pdflatex"
+  "build/informeLab_v2.run.xml" 1789433010 2476 38ecb9c5bad553c99bd645f206feafc9 "pdflatex"
+  "c:/LaTex/informes_LabControl/Lab_01/Informe/informeLab_v2.tex" 1789432995 39158 27b8200b12c2ee29590437cb546c34cc ""
   "fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png" 1787087753 77203 b49d601818dc51ab756341854425c78a ""
   "fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png" 1787087753 62869 3cbc4ed8518b2c720a3e3410d170fed4 ""
   "fig/TCLab.jpg" 1787157832 225360 8a048b0a14dd1b1603b03020cd1f0b13 ""
@@ -311,7 +311,7 @@
   "fig/controlador_PI_CSD.png" 1788643562 52985 56dddbe72f9101eadbc23b8cf82540aa ""
   "fig/experimental_results_60C.png" 1789422340 64611 4fb8a27246c4a5fcd6d16923e6181c8a ""
   "fig/experimento_multiQ1.png" 1787617508 82217 0d196cbadd142c46b95321ce158c03dd ""
-  "informeLab_v2.tex" 1789432030 39126 5b1db1e2e0e3c21746ed3b06a79fe184 ""
+  "informeLab_v2.tex" 1789432995 39158 27b8200b12c2ee29590437cb546c34cc ""
   "instructivo.sty" 1787087753 9674 70b3f92c58cb68227f7c1e4e4c4168c2 ""
   (generated)
   "build/informeLab_v2.aux"
