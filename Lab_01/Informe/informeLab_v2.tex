@@ -428,6 +428,15 @@ La interfaz resultante del SUT quedó definida como
 \label{eq:interfaz_SUT}
 \end{equation}
 
+La estructura del controlador implementado se muestra en la Figura~\ref{fig:controller_esquematico}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=6cm]{controller_esquematico.pdf}
+        \caption{Esquema del controlador PI con saturación y anti-windup.}
+        \label{fig:controller_esquematico}
+\end{figure}
+
 con un único período de muestreo $T_s = 1\,\text{s}$ para las tres señales.
 
 El controlador se separó del modelo MIL y se convirtió en un modelo referenciado
@@ -672,6 +681,8 @@ $T_1$, a la cuantización del ADC y a dinámicas no modeladas (radiación, conve
 no contempladas en la linealización), factores ausentes en la planta FOPDT simulada. En conjunto, el
 recorrido desde el modelo hasta la planta física evidencia que cada etapa del flujo MBD aporta una
 verificación distinta e importante.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
